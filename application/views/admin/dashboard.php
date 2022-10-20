@@ -563,7 +563,7 @@
                 datasets: [
 
                     {
-                        label: '<?php echo $this->lang->line('income') ?>',
+                        label: '<?php echo 'IPD' ?>',
                         fill: false,
                         backgroundColor: '#66aa18',
                         borderColor: '#66aa18',
@@ -571,7 +571,7 @@
                     },
 
                     {
-                        label: '<?php echo $this->lang->line('expense') ?>',
+                        label: '<?php echo 'OPD' ?>',
                         backgroundColor: window.chartColors.red,
                         borderColor: window.chartColors.red,
                         data: yearly_expense_array,

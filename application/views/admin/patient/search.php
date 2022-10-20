@@ -163,7 +163,36 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                                     <b><?php echo $this->lang->line('remarks') ?> </b> 
                                                     <span id="note"></span>
                                                 </li>    
-                                            </ul>                               
+                                            </ul>
+                                            
+                                            <ul class="armylist">  
+                                                <li>
+                                                    <b><?php echo 'Rank'; ?> </b>
+                                                    <span id="rank"></span>
+                                                </li>    
+
+                                                <li>
+                                                    <b><?php echo 'Regiment'; ?> </b>
+                                                    <span id="regiment"></span>
+                                                </li>
+                                                <li>
+                                                    <b><?php echo 'Unit'; ?> </b>
+                                                    <span id="unit"></span>
+                                                </li>
+                                                <li>
+                                                    <b><?php echo 'Entitlement'; ?> </b>
+                                                    <span id="entitlement" ></span>
+                                                </li>
+
+                                                <li>
+                                                    <b><?php echo 'Disease'; ?> </b>
+                                                    <span id="disease" ></span>
+                                                </li>
+                                                <li>
+                                                    <b><?php echo 'OPD Refer'; ?> </b>
+                                                    <span id="opd_refer"></span>
+                                                </li>    
+                                            </ul>
                                         </div><!-- ./col-md-9 -->
                                         <div class="col-md-3 col-sm-3 col-xs-3"> 
                                             <div class="pull-right">  
@@ -638,7 +667,7 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="exampleInputFile">
-<?php echo $this->lang->line('casualty'); ?></label>
+                                                    <?php echo $this->lang->line('casualty'); ?></label>
                                                 <div>
                                                     <select name="casualty" id="revisit_casualty" class="form-control">
                                                         <option value="<?php echo $this->lang->line('yes') ?>"><?php echo $this->lang->line('yes') ?></option>
@@ -1073,6 +1102,7 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
 
                 if (res) {
 
+                    
                     $("#ajax_load").html("");
                     $("#patientDetails").show();
                     $('#patient_unique_id').html(res.patient_unique_id);
@@ -1131,6 +1161,23 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                     //$('select[id="genders"] option[value="' + res.gender + '"]').attr("selected", "selected");
                     //$('select[id="marital_status"] option[value="' + res.marital_status + '"]').attr("selected", "selected");
                     // $('select[id="blood_group"] option[value="' + res.blood_group + '"]').attr("selected", "selected");
+                    if(res.ptype == 1){
+                        $('.singlelist').show();
+                        $('.multilinelist').show();
+                        $('.armylist').hide();
+                    } else {
+                        $('.singlelist').hide();
+                        $('.multilinelist').hide();
+                        $('.armylist').show();
+
+                        $("#rank").html(res.rank);
+                        $("#regiment").html(res.regiment);
+                        $("#unit").html(res.unit);
+                        $("#entitlement").html(res.entitlement);
+                        $("#disease").html(res.disease);
+                        $("#opd_refer").html(res.opd_refer);
+                        
+                    }
                 } else {
                     $("#ajax_load").html("");
                     $("#patientDetails").hide();

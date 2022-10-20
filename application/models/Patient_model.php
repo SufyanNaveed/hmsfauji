@@ -1866,12 +1866,12 @@ class Patient_model extends CI_Model
         if (!empty($search)) {
             $this->db->where($search);
         }
-        $query = $this->db->select('sum(pathology_report.apply_charge) as amount')
+        $query = $this->db->select('count(pathology_report.pathology_id) as count')
             ->join('pathology', 'pathology.charge_id = charges.id')
             ->join('pathology_report', 'pathology_report.pathology_id = pathology.id')
             ->get('charges');
         $result = $query->row_array();
-        return $result["amount"];
+        return $result["count"];
     }
 
     public function getRadiologyEarning($search = '')
@@ -1880,12 +1880,12 @@ class Patient_model extends CI_Model
             $this->db->where($search);
         }
 
-        $query = $this->db->select('sum(radiology_report.apply_charge) as amount')
+        $query = $this->db->select('count(radiology_report.radiology_id) as count')
             ->join('radio', 'radio.charge_id = charges.id')
             ->join('radiology_report', 'radiology_report.radiology_id = radio.id')
             ->get('charges');
         $result = $query->row_array();
-        return $result["amount"];
+        return $result["count"];
     }
 
     public function getOTEarning($search = '')

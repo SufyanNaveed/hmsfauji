@@ -659,7 +659,7 @@ class patient extends Admin_Controller
     public function addpatient()
     {
        
-        $this->form_validation->set_rules('name', $this->lang->line('name'), 'trim|required|xss_clean');
+        $this->form_validation->set_rules('name', $this->lang->line('name'), 'trim|xss_clean');
 
         $this->form_validation->set_rules('file', $this->lang->line('image'), 'callback_handle_upload');
 
@@ -706,8 +706,16 @@ class patient extends Admin_Controller
                 'dob'               => $dob,
                 'is_active'         => 'yes',
                 'discharged'        => 'no',
+                'ptype'             => $this->input->post('ptype'),
+                'rank'             => $this->input->post('rank'),
+                'regiment'             => $this->input->post('regiment'),
+                'unit'             => $this->input->post('unit'),
+                'entitlement'             => $this->input->post('entitlement'),
+                'disease'             => $this->input->post('disease'),
+                'opd_refer'             => $this->input->post('opd_refer'),
+
             );
-            // print_r($patient_data);
+            // echo '<pre>'; print_r($patient_data);
             // exit();
             
             $insert_id = $this->patient_model->add_patient($patient_data);
