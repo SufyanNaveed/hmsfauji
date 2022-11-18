@@ -9,7 +9,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <div class="box box-primary">
+                <div class="box box-primary test">
 
                     <form id="form1" action="<?php echo site_url('admin/patient') ?>"  id="employeeform" name="employeeform" method="post" accept-charset="utf-8" enctype="multipart/form-data">
                         <div class="box-body">
