@@ -30,6 +30,12 @@ class patient extends Admin_Controller
         $this->charge_type          = $this->customlib->getChargeMaster();
         $data["charge_type"]        = $this->charge_type;
         $this->patient_login_prefix = "pat";
+        $this->load->model('designation_model');
+        $this->load->model('rank_model');
+        $this->load->model('unit_model');
+        $this->load->model('wing_model');
+        $this->load->model('disease_model');
+
     }
 
     public function unauthorized()
@@ -659,7 +665,7 @@ class patient extends Admin_Controller
     public function addpatient()
     {
        
-        $this->form_validation->set_rules('name', $this->lang->line('name'), 'trim|xss_clean');
+        $this->form_validation->set_rules('name', $this->lang->line('name'), 'trim|required|xss_clean');
 
         $this->form_validation->set_rules('file', $this->lang->line('image'), 'callback_handle_upload');
 
@@ -707,12 +713,14 @@ class patient extends Admin_Controller
                 'is_active'         => 'yes',
                 'discharged'        => 'no',
                 'ptype'             => $this->input->post('ptype'),
-                'rank'             => $this->input->post('rank'),
-                'regiment'             => $this->input->post('regiment'),
-                'unit'             => $this->input->post('unit'),
-                'entitlement'             => $this->input->post('entitlement'),
-                'disease'             => $this->input->post('disease'),
-                'opd_refer'             => $this->input->post('opd_refer'),
+                'rank'              => $this->input->post('rank'),
+                'regiment'          => $this->input->post('regiment'),
+                'unit'              => $this->input->post('unit'),
+                'entitlement'       => $this->input->post('entitlement'),
+                'disease'           => $this->input->post('disease'),
+                'opd_refer'         => $this->input->post('opd_refer'),
+                'designation'       => $this->input->post('designation'),
+                'wing'              => $this->input->post('wing'),
 
             );
             // echo '<pre>'; print_r($patient_data);
@@ -954,6 +962,11 @@ class patient extends Admin_Controller
         $this->session->set_userdata('top_menu', 'OPD_Out_Patient');
         $setting                    = $this->setting_model->get();
         $data['setting']            = $setting;
+        $data['designation']        = $this->designation_model->get();
+        $data['rank']               = $this->rank_model->get();
+        $data['unit']               = $this->unit_model->get();
+        $data['wing']               = $this->wing_model->get();
+        $data['disease']            = $this->disease_model->get();
         $opd_month                  = $setting[0]['opd_record_month'];
         $data["marital_status"]     = $this->marital_status;
         $data["payment_mode"]       = $this->payment_mode;
@@ -978,7 +991,7 @@ class patient extends Admin_Controller
                 $doctorid       = $userdata['id'];
             }
         }
-
+        //echo '<pre>'; print_r($data);exit;
         $data["doctor_select"]  = $doctorid;
         $data["disable_option"] = $disable_option;      
         $data['organisation']   = $this->organisation_model->get();       

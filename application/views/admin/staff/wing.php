@@ -21,19 +21,20 @@
                             <li><a href="<?php echo base_url(); ?>admin/leavetypes" ><?php echo $this->lang->line('leave_type'); ?></a></li>
                         <?php } if ($this->rbac->hasPrivilege('department', 'can_view')) { ?>
                             <li><a href="<?php echo base_url(); ?>admin/department"><?php echo $this->lang->line('department'); ?></a></li>
-                        <?php } if ($this->rbac->hasPrivilege('specialist', 'can_view')) { ?>
+                        <?php }  if ($this->rbac->hasPrivilege('specialist', 'can_view')) { ?>
                             <li><a href="<?php echo base_url(); ?>admin/specialist"><?php echo $this->lang->line('specialist'); ?></a></li>
                         <?php } if ($this->rbac->hasPrivilege('designation', 'can_view')) { ?>
-                            <li><a href="<?php echo base_url(); ?>admin/designation/designation" class="active"><?php echo $this->lang->line('designation'); ?></a></li>
+                            <li><a href="<?php echo base_url(); ?>admin/designation/designation"><?php echo $this->lang->line('designation'); ?></a></li>
                         <?php } if ($this->rbac->hasPrivilege('rank', 'can_view')) { ?>
                             <li><a href="<?php echo base_url(); ?>admin/rank"><?php echo $this->lang->line('rank'); ?></a></li>
                         <?php } if ($this->rbac->hasPrivilege('unit', 'can_view')) { ?>
                             <li><a href="<?php echo base_url(); ?>admin/unit"><?php echo $this->lang->line('unit'); ?></a></li>
                         <?php } if ($this->rbac->hasPrivilege('wing', 'can_view')) { ?>
-                            <li><a href="<?php echo base_url(); ?>admin/wing"><?php echo $this->lang->line('wing'); ?></a></li>
+                            <li><a href="<?php echo base_url(); ?>admin/wing" class="active"><?php echo $this->lang->line('wing'); ?></a></li>
                         <?php } if ($this->rbac->hasPrivilege('disease', 'can_view')) { ?>
                             <li><a href="<?php echo base_url(); ?>admin/disease"><?php echo $this->lang->line('disease'); ?></a></li>
                         <?php } ?>
+
                     </ul>
                 </div>
             </div> 
@@ -41,10 +42,10 @@
             <div class="col-md-10">              
                 <div class="box box-primary" id="tachelist">
                     <div class="box-header ptbnull">
-                        <h3 class="box-title titlefix"><?php echo $this->lang->line('designation'); ?> <?php echo $this->lang->line('list'); ?></h3>
+                        <h3 class="box-title titlefix"><?php echo $this->lang->line('wing'); ?> <?php echo $this->lang->line('list'); ?></h3>
                         <div class="box-tools pull-right">
-                            <?php if ($this->rbac->hasPrivilege('designation', 'can_add')) { ?>
-                                <a data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-sm designation"><i class="fa fa-plus"></i>  <?php echo $this->lang->line('add'); ?> <?php echo $this->lang->line('designation'); ?></a>  
+                            <?php if ($this->rbac->hasPrivilege('wing', 'can_add')) { ?>
+                                <a data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-sm wing"><i class="fa fa-plus"></i>  <?php echo $this->lang->line('add'); ?> <?php echo $this->lang->line('wing'); ?></a>  
                             <?php } ?>   
                         </div>
                     </div>
@@ -52,12 +53,12 @@
                         <div class="mailbox-controls">
                         </div>
                         <div class="table-responsive mailbox-messages">
-                            <div class="download_label"><?php echo $this->lang->line('designation'); ?></div>
+                            <div class="download_label"><?php echo $this->lang->line('wing'); ?></div>
                             <table class="table table-striped table-bordered table-hover example">
                                 <thead>
                                     <tr>
 
-                                        <th><?php echo $this->lang->line('designation'); ?></th>
+                                        <th><?php echo $this->lang->line('wing'); ?></th>
                                        <!--  <th><?php echo $this->lang->line('active'); ?> <?php echo $this->lang->line('status'); ?></th> -->
                                         <th class="text-right no-print"><?php echo $this->lang->line('action'); ?>
                                         </th>
@@ -66,7 +67,7 @@
                                 <tbody>
                                     <?php
                                     $count = 1;
-                                    foreach ($designation as $value) {
+                                    foreach ($wing as $value) {
                                         $status = "";
 
                                         if ($value["is_active"] == "yes") {
@@ -78,15 +79,15 @@
                                         ?>
                                         <tr>
 
-                                            <td class="mailbox-name"> <?php echo $value['designation'] ?></td>
+                                            <td class="mailbox-name"> <?php echo $value['wing'] ?></td>
                                            <!--  <td><?php echo $this->lang->line($value['is_active']) ?></td> -->
                                             <td class="mailbox-date pull-right no-print">
-                                                <?php if ($this->rbac->hasPrivilege('designation', 'can_edit')) { ?>
+                                                <?php if ($this->rbac->hasPrivilege('wing', 'can_edit')) { ?>
                                                     <a onclick="get(<?php echo $value['id']; ?>)" data-target="#editmyModal" class="btn btn-default btn-xs"  data-toggle="tooltip" title="<?php echo $this->lang->line('edit'); ?>">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
-                                                <?php } if ($this->rbac->hasPrivilege('designation', 'can_delete')) { ?>
-                                                    <a  class="btn btn-default btn-xs"  data-toggle="tooltip" title="<?php echo $this->lang->line('delete'); ?>" onclick="delete_recordById('<?php echo base_url(); ?>admin/designation/designationdelete/<?php echo $value['id'] ?>', '<?php echo $this->lang->line('delete_message'); ?>')";>
+                                                <?php } if ($this->rbac->hasPrivilege('wing', 'can_delete')) { ?>
+                                                    <a  class="btn btn-default btn-xs"  data-toggle="tooltip" title="<?php echo $this->lang->line('delete'); ?>" onclick="delete_recordById('<?php echo base_url(); ?>admin/wing/wingdelete/<?php echo $value['id'] ?>', '<?php echo $this->lang->line('delete_message'); ?>')";>
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 <?php } ?>
@@ -116,24 +117,24 @@
         <div class="modal-content modal-media-content">
             <div class="modal-header modal-media-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="box-title"> <?php echo $this->lang->line('add'); ?>  <?php echo $this->lang->line('designation'); ?></h4> 
+                <h4 class="box-title"> <?php echo $this->lang->line('add'); ?>  <?php echo $this->lang->line('wing'); ?></h4> 
             </div>
 
 
 
-            <form id="formadd" action="<?php echo site_url('admin/designation/add') ?>" name="employeeform" method="post" accept-charset="utf-8"  enctype="multipart/form-data">
+            <form id="formadd" action="<?php echo site_url('admin/wing/add') ?>" name="employeeform" method="post" accept-charset="utf-8"  enctype="multipart/form-data">
                 <div class="modal-body pt0 pb0">
                     <div class="ptt10">
                         <div class="form-group">
                             <label for="exampleInputEmail1"><?php echo $this->lang->line('name'); ?></label><small class="req"> *</small>
                             <input autofocus="" id="type"  name="type" placeholder="" type="text" class="form-control"  value="<?php
                             if (isset($result)) {
-                                echo $result["designation"];
+                                echo $result["wing"];
                             }
                             ?>" />
                             <span class="text-danger"><?php echo form_error('type'); ?></span>
 
-                            <input autofocus="" id="type"  name="designationid" placeholder="" type="hidden" class="form-control"  value="<?php
+                            <input autofocus="" id="type"  name="wingid" placeholder="" type="hidden" class="form-control"  value="<?php
                             if (isset($result)) {
                                 echo $result["id"];
                             }
@@ -158,12 +159,12 @@
         <div class="modal-content modal-media-content">
             <div class="modal-header modal-media-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="box-title"> <?php echo $this->lang->line('edit'); ?>  <?php echo $this->lang->line('designation'); ?></h4> 
+                <h4 class="box-title"> <?php echo $this->lang->line('edit'); ?>  <?php echo $this->lang->line('wing'); ?></h4> 
             </div>
 
 
 
-            <form id="editformadd" action="<?php echo site_url('admin/designation/edit') ?>"  id="employeeform" name="employeeform" method="post" accept-charset="utf-8"  enctype="multipart/form-data">
+            <form id="editformadd" action="<?php echo site_url('admin/wing/edit') ?>"  id="employeeform" name="employeeform" method="post" accept-charset="utf-8"  enctype="multipart/form-data">
                 <div class="modal-body pt0 pb0">
                     <div class="ptt10">
 
@@ -172,7 +173,7 @@
                             <input autofocus="" id="type1"  name="type" placeholder="" type="text" class="form-control" />
                             <span class="text-danger"><?php echo form_error('type'); ?></span>
 
-                            <input autofocus="" id="degi_id"  name="designationid" placeholder="" type="hidden" class="form-control"  />
+                            <input autofocus="" id="degi_id"  name="wingid" placeholder="" type="hidden" class="form-control"  />
                         </div>
 
 
@@ -238,11 +239,11 @@
 
             dataType: 'json',
 
-            url: '<?php echo base_url(); ?>admin/designation/get_data/' + id,
+            url: '<?php echo base_url(); ?>admin/wing/get_data/' + id,
 
             success: function (result) {
                 $('#degi_id').val(result.id);
-                $('#type1').val(result.designation);
+                $('#type1').val(result.wing);
             }
 
         });
@@ -286,7 +287,7 @@
         }));
     });
 
-$(".designation").click(function(){
+$(".wing").click(function(){
 	$('#formadd').trigger("reset");
 });
 </script>

@@ -18,12 +18,20 @@
                         <?php } ?>
                         <?php if ($this->rbac->hasPrivilege('department', 'can_view')) { ?>
                             <li><a href="<?php echo base_url(); ?>admin/department"><?php echo $this->lang->line('department'); ?></a></li>
-                        <?php } if ($this->rbac->hasPrivilege('designation', 'can_view')) { ?>
-                            <li><a href="<?php echo base_url(); ?>admin/designation/designation"><?php echo $this->lang->line('designation'); ?></a></li>
                         <?php } ?> 
                            <?php if ($this->rbac->hasPrivilege('specialist', 'can_view')) { ?>
-                            <li><a href="<?php echo base_url(); ?>admin/specialist" class="active"><?php echo $this->lang->line('specialist'); ?></a></li>
-                        <?php } ?>                   
+                            <li><a href="<?php echo base_url(); ?>admin/specialist"><?php echo $this->lang->line('specialist'); ?></a></li>
+                            <?php } if ($this->rbac->hasPrivilege('designation', 'can_view')) { ?>
+                            <li><a href="<?php echo base_url(); ?>admin/designation/designation"><?php echo $this->lang->line('designation'); ?></a></li>
+                        <?php } if ($this->rbac->hasPrivilege('rank', 'can_view')) { ?>
+                            <li><a href="<?php echo base_url(); ?>admin/rank"><?php echo $this->lang->line('rank'); ?></a></li>
+                        <?php } if ($this->rbac->hasPrivilege('unit', 'can_view')) { ?>
+                            <li><a href="<?php echo base_url(); ?>admin/unit"><?php echo $this->lang->line('unit'); ?></a></li>
+                        <?php } if ($this->rbac->hasPrivilege('wing', 'can_view')) { ?>
+                            <li><a href="<?php echo base_url(); ?>admin/wing"><?php echo $this->lang->line('wing'); ?></a></li>
+                        <?php } if ($this->rbac->hasPrivilege('disease', 'can_view')) { ?>
+                            <li><a href="<?php echo base_url(); ?>admin/disease"><?php echo $this->lang->line('disease'); ?></a></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>           

@@ -4,7 +4,7 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-class Designation extends Admin_Controller
+class Disease extends Admin_Controller
 {
 
     public function __construct()
@@ -13,46 +13,42 @@ class Designation extends Admin_Controller
         parent::__construct();
         $this->load->helper('file');
         $this->config->load("payroll");
+        $this->load->model('disease_model');
     }
 
-    public function designation()
+    public function index()
     {
-
         $this->session->set_userdata('top_menu', 'setup');
         $this->session->set_userdata('sub_menu', 'hr/index');
-        $designation         = $this->designation_model->get();
-        $data["title"]       = "Add Designation";
-        $data["designation"] = $designation;
-        $this->form_validation->set_rules(
-            'type', 'Designation Name', array('required',
-                array('check_exists', array($this->designation_model, 'valid_designation')),
-            )
-        );
+        $disease = $this->disease_model->get();
+        $data["title"]       = "Add disease";
+        $data["disease"] = $disease;
+        $this->form_validation->set_rules( 'type', 'disease Name', array('required', array('check_exists', array($this->disease_model, 'valid_disease')),));
         if ($this->form_validation->run()) {
             $type          = $this->input->post("type");
-            $designationid = $this->input->post("designationid");
+            $diseaseid = $this->input->post("diseaseid");
             $status        = $this->input->post("status");
-            if (empty($designationid)) {
-                if (!$this->rbac->hasPrivilege('designation', 'can_add')) {
+            if (empty($diseaseid)) {
+                if (!$this->rbac->hasPrivilege('disease', 'can_add')) {
                     access_denied();
                 }
             } else {
-                if (!$this->rbac->hasPrivilege('designation', 'can_edit')) {
+                if (!$this->rbac->hasPrivilege('disease', 'can_edit')) {
                     access_denied();
                 }
             }
-            if (!empty($designationid)) {
-                $data = array('designation' => $type, 'is_active' => 'yes', 'id' => $designationid);
+            if (!empty($diseaseid)) {
+                $data = array('disease' => $type, 'is_active' => 'yes', 'id' => $diseaseid);
             } else {
 
-                $data = array('designation' => $type, 'is_active' => 'yes');
+                $data = array('disease' => $type, 'is_active' => 'yes');
             }
-            $insert_id = $this->designation_model->addDesignation($data);
+            $insert_id = $this->disease_model->adddisease($data);
             $this->session->set_flashdata('msg', '<div class="alert alert-success">Record added Successfully</div>');
-            redirect("admin/designation");
+            redirect("admin/disease");
         } else {
             $this->load->view("layout/header");
-            $this->load->view("admin/staff/designation", $data);
+            $this->load->view("admin/staff/disease", $data);
             $this->load->view("layout/footer");
         }
     }
@@ -61,19 +57,19 @@ class Designation extends Admin_Controller
     {
         $this->form_validation->set_rules(
             'type', $this->lang->line('name'), array('required',
-                array('check_exists', array($this->designation_model, 'valid_designation')),
+                array('check_exists', array($this->disease_model, 'valid_disease')),
             )
         );
+
         if ($this->form_validation->run() == false) {
             $msg = array(
                 'name' => form_error('type'),
             );
-
             $array = array('status' => 'fail', 'error' => $msg, 'message' => '');
         } else {
-            $type      = $this->input->post("type");
-            $data      = array('designation' => $type, 'is_active' => 'yes');
-            $insert_id = $this->designation_model->addDesignation($data);
+        $type      = $this->input->post("type");
+            $data      = array('disease' => $type, 'is_active' => 'yes');
+            $insert_id = $this->disease_model->adddisease($data);
             $array     = array('status' => 'success', 'error' => '', 'message' => $this->lang->line('success_message'));
         }
         echo json_encode($array);
@@ -83,7 +79,7 @@ class Designation extends Admin_Controller
     {
         $this->form_validation->set_rules(
             'type', $this->lang->line('name'), array('required',
-                array('check_exists', array($this->designation_model, 'valid_designation')),
+                array('check_exists', array($this->disease_model, 'valid_disease')),
             )
         );
         if ($this->form_validation->run() == false) {
@@ -92,23 +88,23 @@ class Designation extends Admin_Controller
             );
             $array = array('status' => 'fail', 'error' => $msg, 'message' => '');
         } else {
-            $id   = $this->input->post('designationid');
+            $id   = $this->input->post('diseaseid');
             $type = $this->input->post("type");
-            $data = array('designation' => $type, 'is_active' => 'yes', 'id' => $id);
-            $this->designation_model->addDesignation($data);
+            $data = array('disease' => $type, 'is_active' => 'yes', 'id' => $id);
+            $this->disease_model->adddisease($data);
             $array = array('status' => 'success', 'error' => '', 'message' => $this->lang->line('update_message'));
         }
         echo json_encode($array);
     }
 
-    public function designationdelete($id)
+    public function diseasedelete($id)
     {
-        $this->designation_model->deleteDesignation($id);
+        $this->disease_model->deletedisease($id);
     }
 
     public function get_data($id)
     {
-        $result = $this->designation_model->get($id);
+        $result = $this->disease_model->get($id);
         echo json_encode($result);
     }
 

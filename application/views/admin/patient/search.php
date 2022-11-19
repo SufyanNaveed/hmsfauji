@@ -114,15 +114,16 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                     <div id="ajax_load"></div>
                                     <div class="row ptt10" id="patientDetails" style="display:none">
                                         <div class="col-md-9 col-sm-9 col-xs-9">
-                                            <ul class="singlelist">
+                                            <!-- <ul class="singlelist"> -->
+                                            <ul>
                                                 <li class="singlelist24bold">
                                                     <span id="listname"></span></li>
                                                 <li>
                                                     <i class="fas fa-user-secret" data-toggle="tooltip" data-placement="top" title="Guardian"></i>
                                                     <span id="guardian"></span>
                                                 </li>
-                                            </ul>   
-                                            <ul class="multilinelist">   
+                                            <!-- </ul>    -->
+                                            <!-- <ul class="multilinelist">    -->
                                                 <li>
                                                     <i class="fas fa-venus-mars" data-toggle="tooltip" data-placement="top" title="Gender"></i>
                                                     <span id="genders" ></span>
@@ -135,8 +136,8 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                                     <i class="fas fa-ring" data-toggle="tooltip" data-placement="top" title="Marital Status"></i>
                                                     <span id="marital_status"></span>
                                                 </li> 
-                                            </ul>  
-                                            <ul class="singlelist">  
+                                            <!-- </ul>   -->
+                                            <!-- <ul class="singlelist">   -->
                                                 <li>
                                                     <i class="fas fa-hourglass-half" data-toggle="tooltip" data-placement="top" title="Age"></i>
                                                     <span id="age"></span>
@@ -163,9 +164,9 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                                     <b><?php echo $this->lang->line('remarks') ?> </b> 
                                                     <span id="note"></span>
                                                 </li>    
-                                            </ul>
+                                            <!-- </ul> -->
                                             
-                                            <ul class="armylist">  
+                                            <!-- <ul class="armylist">   -->
                                                 <li>
                                                     <b><?php echo 'Rank'; ?> </b>
                                                     <span id="rank"></span>
@@ -183,7 +184,6 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                                     <b><?php echo 'Entitlement'; ?> </b>
                                                     <span id="entitlement" ></span>
                                                 </li>
-
                                                 <li>
                                                     <b><?php echo 'Disease'; ?> </b>
                                                     <span id="disease" ></span>
@@ -191,6 +191,14 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                                 <li>
                                                     <b><?php echo 'OPD Refer'; ?> </b>
                                                     <span id="opd_refer"></span>
+                                                </li>
+                                                <li>
+                                                    <b><?php echo 'Designation'; ?> </b>
+                                                    <span id="designation" ></span>
+                                                </li>
+                                                <li>
+                                                    <b><?php echo 'Wing'; ?> </b>
+                                                    <span id="wing"></span>
                                                 </li>    
                                             </ul>
                                         </div><!-- ./col-md-9 -->
@@ -1161,11 +1169,11 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                     //$('select[id="genders"] option[value="' + res.gender + '"]').attr("selected", "selected");
                     //$('select[id="marital_status"] option[value="' + res.marital_status + '"]').attr("selected", "selected");
                     // $('select[id="blood_group"] option[value="' + res.blood_group + '"]').attr("selected", "selected");
-                    if(res.ptype == 1){
+                    // if(res.ptype == 1){
                         $('.singlelist').show();
                         $('.multilinelist').show();
                         $('.armylist').hide();
-                    } else {
+                    // } else {
                         $('.singlelist').hide();
                         $('.multilinelist').hide();
                         $('.armylist').show();
@@ -1176,8 +1184,10 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                         $("#entitlement").html(res.entitlement);
                         $("#disease").html(res.disease);
                         $("#opd_refer").html(res.opd_refer);
+                        $("#designation").html(res.designation);
+                        $("#wing").html(res.wing);
                         
-                    }
+                    // }
                 } else {
                     $("#ajax_load").html("");
                     $("#patientDetails").hide();
