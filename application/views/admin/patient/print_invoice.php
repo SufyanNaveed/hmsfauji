@@ -65,10 +65,10 @@
             <h2 style="margin-top:0" class="text-center"><?= $this->setting_model->getCurrentHospitalName() ?></h2>
 
             <table class="inv_info" style='font-family:"Courier New", Courier, monospace; font-size:75%' border="0">
-                <tr>
+                <!-- <tr>
                     <td>Bill:</td>
                     <td>000000-000<?php echo $invoice_detail['id']?></td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Date:</td>
                     <td><?php echo $invoice_detail['appointment_date']?><br></td>
@@ -78,8 +78,20 @@
                     <td><?php echo $invoice_detail['patient_name']?></td>
                 </tr>
                 <tr>
-                    <td>CNIC:</td>
-                    <td><?php echo $invoice_detail['patient_cnic']?></td>
+                    <td>Rank:</td>
+                    <td><?php echo $invoice_detail['rank']?></td>
+                </tr>
+                <tr>
+                    <td>Unit:</td>
+                    <td><?php echo $invoice_detail['unit']?></td>
+                </tr>
+                <tr>
+                    <td>Desig:</td>
+                    <td><?php echo $invoice_detail['designation']?></td>
+                </tr>
+                <tr>
+                    <td>Wing:</td>
+                    <td><?php echo $invoice_detail['wing']?></td>
                 </tr>
                 <tr>
                     <td>MR#:</td>
@@ -98,8 +110,8 @@
                     <td class="products_td"><?php echo $invoice_detail['name']?></td>
                     <td><b>KPO:</b></td>
                     <td class="products_td"><?php echo $invoice_detail['kop_name']?></td>
-                    <td><b> TPA:</b></td>
-                    <td class="products_td"><?php echo $invoice_detail['organisation_name']?></td>
+                    <!-- <td><b> TPA:</b></td>
+                    <td class="products_td"><?php echo $invoice_detail['organisation_name']?></td> -->
                 </tr>
                 <tr>
                     <td><b> Case:</b></td>
@@ -114,13 +126,13 @@
                     <td class="products_td"><?php echo $invoice_detail['note_remark']?></td>
                 </tr>    -->     
             </table><hr>
-            <table class="inv_info">
+            <!-- <table class="inv_info">
                 <tr>
                     <td><b>Paid Amount (PKR) </b></td>
                     <td><b><?php echo $invoice_detail['apply_charge']?></b></td>
                 </tr>            
             </table>
-            <hr>
+            <hr> -->
             <div class="text-center">Thank you</div>
         </div>
     </div>

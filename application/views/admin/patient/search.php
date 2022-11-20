@@ -38,14 +38,17 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                     <tr>
                                     <th><?php echo $this->lang->line('name') ?></th>
                                     <th><?php echo $this->lang->line('patient') . " " . $this->lang->line('id'); ?></th>
-                                    <th><?php echo $this->lang->line('patient') . " " . CNIC; ?></th>
-                                    <th><?php echo $this->lang->line('guardian_name') ?></th>
-                                    <th><?php echo $this->lang->line('gender'); ?></th>
+                                    <!-- <th><?php echo $this->lang->line('patient') . " " . CNIC; ?></th> -->
                                     <th><?php echo $this->lang->line('phone'); ?></th>
-                                    <th><?php echo $this->lang->line('consultant'); ?></th>
+                                    <th><?php echo $this->lang->line('rank') ?></th>
+                                    <th><?php echo $this->lang->line('regiment'); ?></th>
+                                    <th><?php echo $this->lang->line('designation'); ?></th>
+                                    <th><?php echo $this->lang->line('entitlement'); ?></th>
+                                    <th><?php echo $this->lang->line('unit'); ?></th>
+                                    <th><?php echo $this->lang->line('wing'); ?></th>
                                     <th><?php echo $this->lang->line('last') . " " . $this->lang->line('visit'); ?></th>
                                        <!-- <th><?php echo $this->lang->line('opd') . " " . $this->lang->line('no'); ?></th> -->
-                                    <th class="text-right"><?php echo $this->lang->line('total') . " " . $this->lang->line('visit'); ?></th>
+                                    <!-- <th class="text-right"><?php echo $this->lang->line('total') . " " . $this->lang->line('visit'); ?></th> -->
 
                                     </tr>
                                 </thead>

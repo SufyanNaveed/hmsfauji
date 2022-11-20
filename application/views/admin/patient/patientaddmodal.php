@@ -23,9 +23,9 @@ $bloodgroup = $this->config->item('bloodgroup');
                                             <label> <?php echo 'Select Type'; ?></label>
                                             <select class="form-control" name="ptype" id="ptype">
                                                 <option value="">Please select </option>
-                                                <option value="0">ENT </option>
-                                                <option value="1">CNE</option>
-                                                <option value="2">CE</option>
+                                                <option value="1">ENT </option>
+                                                <option value="2">CNE</option>
+                                                <option value="3">CE</option>
                                             </select>
                                         </div>
                                     </div>  
@@ -478,17 +478,17 @@ $bloodgroup = $this->config->item('bloodgroup');
         $(document).on("change", "#ptype", function () {
             var val = $('#ptype').val();
 
-            if(val == 0){
+            if(val == 1){
                 $(".ent").show();                
                 $(".ent_ce").show();
                 $(".ent_cne").show();
                 $(".ce").hide();                
-            }else if (val==1){
+            }else if (val==2){
                 $(".ent").hide();
                 $(".ent_ce").hide();
                 $(".ent_cne").show();
                 $(".ce").hide();
-            } else if (val==2){
+            } else if (val==3){
                 $(".ent").hide();
                 $(".ent_cne").hide();
                 $(".ent_ce").show();

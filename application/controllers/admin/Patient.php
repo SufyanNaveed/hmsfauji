@@ -1011,6 +1011,7 @@ class patient extends Admin_Controller
             $where_condition = array('search' => $_POST['search']['value']);
         }
         $resultlist   = $this->patient_model->search_datatable($where_condition);
+        // echo '<pre>'; print_r($resultlist);exit;
         $total_result = $this->patient_model->search_datatable_count($where_condition);
         $data         = array();
         foreach ($resultlist as $result_key => $result_value) {
@@ -1033,13 +1034,16 @@ class patient extends Admin_Controller
             $nestedData   = array();
             $nestedData[] = $first_action . $result_value->patient_name . "</a>" . $action;
             $nestedData[] = $result_value->patient_unique_id;
-            $nestedData[] = $result_value->patient_cnic;
-            $nestedData[] = $result_value->guardian_name;
-            $nestedData[] = $result_value->gender;
+            // $nestedData[] = $result_value->guardian_name;
             $nestedData[] = $result_value->mobileno;
-            $nestedData[] = $result_value->name . " " . $result_value->surname;
+            $nestedData[] = $result_value->rank ? $result_value->rank : 'N/A';
+            $nestedData[] = $result_value->regiment ? $result_value->regiment : 'N/A';
+            $nestedData[] = $result_value->designation ? $result_value->designation : 'N/A'; //$result_value->name . " " . $result_value->surname;
+            $nestedData[] = $result_value->entitlement ? $result_value->entitlement : 'N/A';
+            $nestedData[] = $result_value->unit ? $result_value->unit : 'N/A'; //date($this->customlib->getSchoolDateFormat(true, true), strtotime($result_value->last_visit));
+            $nestedData[] = $result_value->wing ? $result_value->wing : 'N/A'; //date($this->customlib->getSchoolDateFormat(true, true), strtotime($result_value->last_visit));
             $nestedData[] = date($this->customlib->getSchoolDateFormat(true, true), strtotime($result_value->last_visit));
-            $nestedData[] = $result_value->total_visit;
+            // $nestedData[] = $result_value->total_visit;
             $data[]       = $nestedData;
 
         }
@@ -3080,38 +3084,68 @@ class patient extends Admin_Controller
         }
         $doctorlist         = $this->staff_model->getEmployeeByRoleID(3);
         $data['doctorlist'] = $doctorlist;
+        $data['ranklist']               = $this->rank_model->get();
+        $data['unitlist']               = $this->unit_model->get();
+        $data['diseaselist']            = $this->disease_model->get();
         $doctors            = $this->staff_model->getStaffbyrole(3);
         $data['doctors']    = $doctors;
         $this->session->set_userdata('top_menu', 'Reports');
         $this->session->set_userdata('sub_menu', 'admin/patient/opd_report');
-        $select = 'opd.*,muser.name as kop_name,opd_details.opd_no,opd_details.cons_doctor,opd_details.casualty,opd_details.refference,staff.name,staff.surname,patients.id as pid,patients.patient_name,patients.patient_unique_id,patients.guardian_name,patients.address,patients.admission_date,patients.gender,patients.mobileno,patients.age,patients.month';
+        $select = 'opd.*,muser.name as kop_name,opd_details.opd_no,opd_details.cons_doctor,opd_details.casualty,
+        opd_details.refference,staff.name,staff.surname,patients.id as pid,patients.patient_name,patients.patient_unique_id,
+        patients.guardian_name,patients.address,patients.admission_date,patients.gender,patients.mobileno,patients.age,
+        patients.month,staff_unit.unit,staff_rank.rank,staff_disease.disease';
         $join   = array(
             'LEFT JOIN patients ON opd.patient_id = patients.id',
             'LEFT JOIN opd_details ON opd_details.id = opd.id',
             'LEFT JOIN staff ON opd_details.cons_doctor = staff.id',
             'LEFT JOIN staff muser ON opd_details.generated_by = muser.id',
+            'LEFT JOIN staff_unit ON patients.unit = staff_unit.id',
+            'LEFT JOIN staff_rank ON patients.rank = staff_rank.id',
+            'LEFT JOIN staff_disease ON patients.disease = staff_disease.id',
         );
         $where = array();
 
         $patient_status         = $this->input->post("patient_status");
         $data["patient_status"] = $patient_status;
+        $$additional_where = '';
         if (!empty($patient_status)) {
-            $additional_where = array(
-                "opd.paytype = '" . $patient_status . "'",
-            );
+            $additional_where = "opd.paytype = '" . $patient_status . "'";
         } else {
-            $additional_where = array('1 = 1');
+           // $additional_where = '1 = 1';
         }
 
         $doctorid = $this->input->post('doctor');
+        $unitid = $this->input->post('unit');
+        $rankid = $this->input->post('rank');
+        $diseaseid = $this->input->post('disease');
 
         if (!empty($doctorid)) {
-            $additional_where = array('opd_details.cons_doctor =' . $doctorid);
-        }
-        if (!empty($doctorid and $patient_status)) {
-            $additional_where = array("opd_details.cons_doctor = '" . $doctorid . "'", "opd.paytype = '" . $patient_status . "'");
+            $additional_where = $additional_where ? $additional_where .' AND ' : '';
+            $additional_where .= 'opd_details.cons_doctor =' . $doctorid;
         }
 
+        if (!empty($unitid)) {
+            $additional_where = $additional_where ? $additional_where .' AND ' : '';
+            $additional_where .= 'patients.unit =' . $unitid;
+        }
+
+        if (!empty($rankid)) {
+            $additional_where = $additional_where ? $additional_where .' AND ' : '';
+            $additional_where .= 'patients.rank =' . $rankid;
+        }
+
+        if (!empty($diseaseid)) {
+            $additional_where = $additional_where ? $additional_where .' AND ' : '';
+            $additional_where .= 'patients.disease =' . $diseaseid;
+        }
+
+        
+        // if (!empty($doctorid and $patient_status)) {
+        //     $additional_where = array("opd_details.cons_doctor = '" . $doctorid . "'", "opd.paytype = '" . $patient_status . "'");
+        // }
+        // $additional_where  = array('1 = 1');
+        //echo '<pre>'; print_r($additional_where); exit;
         $table_name = "(SELECT `id`, `patient_id`,`amount`,`appointment_date`,`payment_mode`,'visit' as paytype FROM `opd_details` UNION ALL SELECT `opd_id`,`patient_id`,`amount`,`appointment_date`,`payment_mode`,'rechekup' as paytype FROM `visit_details` UNION ALL SELECT `opd_id`,`patient_id`,`paid_amount`,`date`,`payment_mode`,'payment' as paytype FROM `opd_payment` UNION ALL SELECT `opd_id`,`patient_id`,`net_amount`,`date`,`status`,'bill' as paytype FROM `opd_billing`) AS opd";
 
         $disable_option     = false;
@@ -3131,6 +3165,9 @@ class patient extends Admin_Controller
         }
         $data['disable_option'] = $disable_option;
         $data['doctor_select']  = $doctorid;
+        $data['unit_select']  = $unitid;
+        $data['rank_select']  = $rankid;
+        $data['disease_select']  = $diseaseid;
         $search_type            = $this->input->post("search_type");
 
         if (isset($search_type)) {
@@ -3142,6 +3179,7 @@ class patient extends Admin_Controller
         $search_table        = "opd";
         $search_column       = "appointment_date";
         $resultlist          = $this->report_model->searchReport($select, $join, $table_name, $search_type, $search_table, $search_column, $additional_where, $where);
+        //echo '<pre>'; print_r($resultlist); exit;
         $data["searchlist"]  = $this->search_type;
         $data["search_type"] = $search_type;
         $data["resultlist"]  = $resultlist;

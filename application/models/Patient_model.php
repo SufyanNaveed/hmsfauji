@@ -555,9 +555,15 @@ class Patient_model extends CI_Model
                 $this->db->where('opd_details.cons_doctor', $userdata['id']);
             }
         }
-        $this->db->select('opd_details.*,patients.id as pid,patients.patient_name,patients.patient_cnic,patients.patient_unique_id,patients.guardian_name,patients.gender,patients.mobileno,patients.is_ipd,staff.name,staff.surname')->from('opd_details');
+        $this->db->select('opd_details.*,patients.*,patients.id as pid,staff_rank.*,staff_unit.*,staff_wing.*,staff_designation.*'); //,patients.patient_name,patients.patient_cnic,patients.patient_unique_id,patients.guardian_name,patients.gender,patients.mobileno,patients.is_ipd,staff.name,staff.surname');
+        $this->db->from('opd_details');
         $this->db->join('patients', "patients.id=opd_details.patient_id", "LEFT");
         $this->db->join('staff', 'staff.id = opd_details.cons_doctor', "LEFT");
+        $this->db->join('staff_rank', "staff_rank.id = patients.rank", "LEFT");
+        $this->db->join('staff_unit', "staff_unit.id = patients.unit", "LEFT");
+        $this->db->join('staff_wing', "staff_wing.id = patients.wing", "LEFT");
+        $this->db->join('staff_designation', "staff_designation.id = patients.designation", "LEFT");
+        
         $this->db->where('patients.is_active', 'yes');
         if (!isset($_POST['order'])) {
             // $this->db->order_by('max(opd_details.appointment_date)', 'desc');
@@ -2125,14 +2131,22 @@ class Patient_model extends CI_Model
 
     public function printVisitDetails($patient_id, $visitid)
     {
-        $query = $this->db->select("patients.*,current_user.name as kop_name,organisation.organisation_name,opd_details.opd_no,opd_details.amount as apply_charge, opd_details.id as opdid,opd_details.appointment_date,opd_details.symptoms,opd_details.case_type,opd_details.casualty,opd_details.note_remark, opd_details.known_allergies as opdknown_allergies,opd_details.discharged,opd_details.pulse,opd_details.temperature,opd_details.respiration,opd_details.height,opd_details.weight,opd_details.bp,staff.name,staff.surname")
-            ->join('opd_details', 'patients.id = opd_details.patient_id')
-            ->join('staff', 'staff.id = opd_details.cons_doctor')
-            ->join('staff as current_user', 'current_user.id = opd_details.generated_by')
-            ->join('organisation', 'organisation.id = patients.organisation', 'left')
-            ->where("patients.id", $patient_id)
-            ->where("opd_details.id", $visitid)
-            ->get("patients");
+        $query = $this->db->select("patients.*,current_user.name as kop_name,organisation.organisation_name,opd_details.opd_no,
+        opd_details.amount as apply_charge, opd_details.id as opdid,opd_details.appointment_date,opd_details.symptoms,
+        opd_details.case_type,opd_details.casualty,opd_details.note_remark, opd_details.known_allergies as opdknown_allergies,
+        opd_details.discharged,opd_details.pulse,opd_details.temperature,opd_details.respiration,opd_details.height,
+        opd_details.weight,opd_details.bp,staff.name,staff.surname,staff_rank.*,staff_unit.*,staff_wing.*,staff_designation.*")
+        ->join('opd_details', 'patients.id = opd_details.patient_id')
+        ->join('staff', 'staff.id = opd_details.cons_doctor')
+        ->join('staff as current_user', 'current_user.id = opd_details.generated_by')
+        ->join('organisation', 'organisation.id = patients.organisation', 'left')
+        ->join('staff_rank', "staff_rank.id = patients.rank", "LEFT")
+        ->join('staff_unit', "staff_unit.id = patients.unit", "LEFT")
+        ->join('staff_wing', "staff_wing.id = patients.wing", "LEFT")
+        ->join('staff_designation', "staff_designation.id = patients.designation", "LEFT")
+        ->where("patients.id", $patient_id)
+        ->where("opd_details.id", $visitid)
+        ->get("patients");
 
         return $query->row_array();
     }
@@ -2323,11 +2337,20 @@ class Patient_model extends CI_Model
     }
     public function printVisitDetailsEmg($patient_id, $visitid)
     {
-        $query = $this->db->select("patients.*,current_user.name as kop_name,organisation.organisation_name,emg_patients_detail.emg_no,emg_patients_detail.amount as apply_charge, emg_patients_detail.id as opdid,emg_patients_detail.appointment_date,emg_patients_detail.symptoms,emg_patients_detail.case_type,emg_patients_detail.casualty,emg_patients_detail.note_remark, emg_patients_detail.known_allergies as opdknown_allergies,emg_patients_detail.discharged,emg_patients_detail.pulse,emg_patients_detail.temperature,emg_patients_detail.respiration,emg_patients_detail.height,emg_patients_detail.weight,emg_patients_detail.bp,staff.name,staff.surname")
+        $query = $this->db->select("patients.*,current_user.name as kop_name,organisation.organisation_name,emg_patients_detail.emg_no,
+        emg_patients_detail.amount as apply_charge, emg_patients_detail.id as opdid,emg_patients_detail.appointment_date,
+        emg_patients_detail.symptoms,emg_patients_detail.case_type,emg_patients_detail.casualty,emg_patients_detail.note_remark, 
+        emg_patients_detail.known_allergies as opdknown_allergies,emg_patients_detail.discharged,emg_patients_detail.pulse,
+        emg_patients_detail.temperature,emg_patients_detail.respiration,emg_patients_detail.height,emg_patients_detail.weight,
+        emg_patients_detail.bp,staff.name,staff.surname,staff_rank.*,staff_unit.*,staff_wing.*,staff_designation.*")
             ->join('emg_patients_detail', 'patients.id = emg_patients_detail.patient_id')
             ->join('staff', 'staff.id = emg_patients_detail.cons_doctor')
             ->join('staff as current_user', 'current_user.id = emg_patients_detail.generated_by')
             ->join('organisation', 'organisation.id = patients.organisation', 'left')
+            ->join('staff_rank', "staff_rank.id = patients.rank", "LEFT")
+            ->join('staff_unit', "staff_unit.id = patients.unit", "LEFT")
+            ->join('staff_wing', "staff_wing.id = patients.wing", "LEFT")
+            ->join('staff_designation', "staff_designation.id = patients.designation", "LEFT")
             ->where("patients.id", $patient_id)
             ->where("emg_patients_detail.id", $visitid)
             ->get("patients");

@@ -117,14 +117,15 @@ class Report_model extends CI_Model
             $where = array();
         }
         if (empty($additional_where)) {
-            $additional_where = array('1 = 1');
+            $additional_where = '1 = 1';
         }
         if (!empty($where)) {
-            $query = "select " . $select . " from " . $table_name . " " . implode(" ", $join) . " where " . implode(" and ", $where) . " and " . implode(" and ", $additional_where) . " order by " . $search_table . "." . $search_column;
+            $query = "select " . $select . " from " . $table_name . " " . implode(" ", $join) . " where " . implode(" and ", $where) . " and " . $additional_where . " order by " . $search_table . "." . $search_column;
         } else {
-            $query = "select " . $select . " from " . $table_name . " " . implode(" ", $join) . " where " . implode("  and ", $additional_where) . " order by " . $search_table . "." . $search_column;
+            $query = "select " . $select . " from " . $table_name . " " . implode(" ", $join) . " where " . "  and ". $additional_where . " order by " . $search_table . "." . $search_column;
         }
         $res = $this->db->query($query);
+       // echo '<pre>'; print_r($this->db->last_query());exit;
         return $res->result_array();
     }
 

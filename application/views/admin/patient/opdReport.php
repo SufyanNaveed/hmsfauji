@@ -31,7 +31,7 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                     <span class="text-danger"><?php echo form_error('search_type'); ?></span>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-md-3"  >
+                            <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label><?php echo $this->lang->line('doctor'); ?></label>
                                     <select class="form-control select2" <?php
@@ -47,12 +47,12 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                                 echo "selected";
                                             }
                                             ?> ><?php echo $value["name"] . " " . $value["surname"] ?></option> 
-<?php } ?>
+                                        <?php } ?>
                                     </select>
                                     <span class="text-danger"><?php echo form_error('doctor'); ?></span>
                                 </div>
                             </div> 
-                               <div class="col-sm-6 col-md-3"  >
+                            <div class="col-sm-6 col-md-3">
                                 <div class="form-group">
                                     <label><?php echo $this->lang->line('payment')." ".$this->lang->line('type'); ?></label>
                                     <select class="form-control "  name="patient_status" style="width: 100%">
@@ -78,6 +78,55 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                                     ?>><?php echo $this->lang->line('bill')." ".$this->lang->line('paid') ?></option>
                                     </select>
                                     <span class="text-danger"><?php echo form_error('patient_status'); ?></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <div class="form-group">
+                                    <label><?php echo $this->lang->line('unit'); ?></label>
+                                    <select class="form-control select2" name="unit" style="width: 100%">
+                                        <option value=""><?php echo $this->lang->line('select') ?></option>
+                                        <?php foreach ($unitlist as $dkey => $value) { ?>
+                                            <option value="<?php echo $value["id"] ?>" <?php
+                                            if ((isset($unit_select)) && ($unit_select == $value["id"])) {
+                                                echo "selected";
+                                            }
+                                            ?> ><?php echo $value["unit"] ?></option> 
+                                        <?php } ?>
+                                    </select>
+                                    <span class="text-danger"><?php echo form_error('unit'); ?></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <div class="form-group">
+                                    <label><?php echo $this->lang->line('rank'); ?></label>
+                                    <select class="form-control select2" name="rank" style="width: 100%">
+                                        <option value=""><?php echo $this->lang->line('select') ?></option>
+                                        <?php foreach ($ranklist as $dkey => $value) { ?>
+                                            <option value="<?php echo $value["id"] ?>" <?php
+                                            if ((isset($rank_select)) && ($rank_select == $value["id"])) {
+                                                echo "selected";
+                                            }
+                                            ?> ><?php echo $value["rank"]?></option> 
+                                        <?php } ?>
+                                    </select>
+                                    <span class="text-danger"><?php echo form_error('rank'); ?></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <div class="form-group">
+                                    <label><?php echo $this->lang->line('disease'); ?></label>
+                                    <select class="form-control select2" name="disease" style="width: 100%">
+                                        <option value=""><?php echo $this->lang->line('select') ?></option>
+                                        <?php foreach ($diseaselist as $dkey => $value) {
+                                            ?>
+                                            <option value="<?php echo $value["id"] ?>" <?php
+                                            if ((isset($disease_select)) && ($disease_select == $value["id"])) {
+                                                echo "selected";
+                                            }
+                                            ?> ><?php echo $value["disease"] ?></option> 
+                                        <?php } ?>
+                                    </select>
+                                    <span class="text-danger"><?php echo form_error('disease'); ?></span>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-3" id="fromdate" style="display: none">
@@ -113,20 +162,14 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                          <th><?php echo $this->lang->line('opd') . " " . $this->lang->line('no'); ?></th> 
                                         <th><?php echo $this->lang->line('patient') . " " . $this->lang->line('id'); ?></th>
                                         <th><?php echo $this->lang->line('patient') . " " . $this->lang->line('name'); ?></th>
-                                        <th><?php echo $this->lang->line('age'); ?></th>
-                                        <th><?php echo $this->lang->line('gender'); ?></th>
                                         <th><?php echo $this->lang->line('mobile_no'); ?></th>
-                                        <th><?php echo $this->lang->line('guardian_name'); ?></th>
-                                        <th><?php echo $this->lang->line('address'); ?></th>
-                                        <th><?php echo $this->lang->line('casualty'); ?></th> 
-                                        <th><?php echo $this->lang->line('refference'); ?></th> 
+                                        <!-- <th><?php echo $this->lang->line('guardian_name'); ?></th> -->
+                                        <!-- <th><?php echo $this->lang->line('address'); ?></th> -->
                                         <th><?php echo $this->lang->line('consultant') . " " . $this->lang->line('doctor'); ?></th>
-                                        <th>KPO</th>
-                                       <!--  <th><?php echo $this->lang->line('charges') ; ?></th> -->
-                                       <th><?php echo $this->lang->line('payment') . " " . $this->lang->line('mode'); ?></th> 
-                                       <th><?php echo $this->lang->line('payment')." ".$this->lang->line('type'); ?></th>
-                                        <th class="text-right"><?php echo $this->lang->line('paid')." ".$this->lang->line('amount') . '(' . $currency_symbol . ')'; ?></th>
-
+                                        <th><?php echo $this->lang->line('rank'); ?></th>
+                                        <th><?php echo $this->lang->line('unit'); ?></th>
+                                        <th><?php echo $this->lang->line('disease'); ?></th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -179,30 +222,26 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                                     <a href="<?php echo base_url(); ?>admin/patient/profile/<?php echo $report['pid']; ?>"><?php echo $report['patient_name'] ?>
                                                     </a>
                                                 </td>
-                                                <td><?php if(!empty($report['age'])){ echo $report['age']." ".$this->lang->line("years")." "; } if(!empty($report['month'])){ echo $report['month']." ".$this->lang->line("month"); } ?></td>
-                                                <td><?php echo $report['gender']; ?></td>
+                                                <!-- <td><?php if(!empty($report['age'])){ echo $report['age']." ".$this->lang->line("years")." "; } if(!empty($report['month'])){ echo $report['month']." ".$this->lang->line("month"); } ?></td> -->
+                                                <!-- <td><?php echo $report['gender']; ?></td> -->
                                                 <td><?php echo $report['mobileno']; ?></td>
-                                                <td><?php echo $report['guardian_name']; ?></td>
-                                                <td><?php echo $report['address']; ?></td>
-                                                <td><?php echo $report['casualty']; ?></td>
-                                                <td><?php echo $report['refference']; ?></td> 
+                                                <!-- <td><?php echo $report['guardian_name']; ?></td> -->
+                                                <!-- <td><?php echo $report['address']; ?></td> -->
                                                 <td><?php echo $report['name']." ".$report['surname']; ?></td> 
-                                                <td><?php echo $report['kop_name']; ?></td> 
-                                               <!--  <td><?php if(isset($report["charges"])){ echo $report["charges"]; } ?></td> -->
-                                                <td><?php  echo $paymentmode ; ?></td>
-                                                 <td><?php echo $paymenttype; ?></td> 
-                                                <td class="text-right"><?php echo $amount ; ?></td>
+                                                <td><?php echo $report['rank']; ?></td> 
+                                                <td><?php echo $report['unit']; ?></td> 
+                                                <td><?php echo $report['disease']; ?></td> 
                                             </tr>
                                             <?php
                                             $count++;
                                         }
                                         ?>
 
-                                         <tr class="box box-solid total-bg">
+                                         <!-- <tr class="box box-solid total-bg">
                                             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                                             <td class="text-right"><?php echo $this->lang->line('total') . " :" . $currency_symbol . $total; ?>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>                                   
 <?php } ?>
                             </table>
