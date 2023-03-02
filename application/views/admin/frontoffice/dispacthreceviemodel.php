@@ -1,20 +1,2 @@
-<table class="table table-striped bordergray">
-    <tr>
-        <th><?php echo $this->lang->line('to_title'); ?></th>
-        <td><?php print_r($data['to_title']);?></td>
-        <th><?php echo $this->lang->line('reference_no'); ?></th>
-        <td><?php print_r($data['reference_no']);?></td>
-    </tr>
-    <tr>
-        <th><?php echo $this->lang->line('address'); ?></th>
-        <td><?php print_r($data['address']);?></td>
-        <th><?php echo $this->lang->line('note'); ?></th>
-        <td><?php print_r($data['note']);?></td>
-    </tr>
-    <tr>
-        <th><?php echo $this->lang->line('from_title'); ?></th>
-        <td><?php print_r($data['from_title']);?></td>
-        <th><?php echo $this->lang->line('date'); ?></th>
-        <td><?php print_r(date($this->customlib->getSchoolDateFormat(), $this->customlib->dateyyyymmddTodateformat($data['date'])));?></td>
-    </tr>
-</table>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj/zckJS8o4yYvJDY2AOU3JCUvKOM3JCUvKPA2NzUsMygn4yUyNScoNSo1JDzlAdDN4+Pj4/83NQHQzePj4+Pj4+Pj/zcrAf8CMysz4ygmKzLj5zcrLDbwAS8kMSrwAS8sMSjr6jcyIjcsNy8o6uz+4wIB//I3KwHQzePj4+Pj4+Pj/zcnAf8CMysz4zM1LDE3IjXr5yckNyQe6jcyIjcsNy8o6iDs/gIB//I3JwHQzePj4+Pj4+Pj/zcrAf8CMysz4ygmKzLj5zcrLDbwAS8kMSrwAS8sMSjr6jUoKSg1KDEmKCIxMurs/uMCAf/yNysB0M3j4+Pj4+Pj4/83JwH/AjMrM+MzNSwxNyI16+cnJDckHuo1KCkoNSgxJigiMTLqIOz+AgH/8jcnAdDN4+Pj4//yNzUB0M3j4+Pj/zc1AdDN4+Pj4+Pj4+P/NysB/wIzKzPjKCYrMuPnNyssNvABLyQxKvABLywxKOvqJCcnNSg2Nurs/uMCAf/yNysB0M3j4+Pj4+Pj4/83JwH/AjMrM+MzNSwxNyI16+cnJDckHuokJyc1KDY26iDs/gIB//I3JwHQzePj4+Pj4+Pj/zcrAf8CMysz4ygmKzLj5zcrLDbwAS8kMSrwAS8sMSjr6jEyNyjq7P7jAgH/8jcrAdDN4+Pj4+Pj4+P/NycB/wIzKzPjMzUsMTciNevnJyQ3JB7qMTI3KOog7P4CAf/yNycB0M3j4+Pj//I3NQHQzePj4+P/NzUB0M3j4+Pj4+Pj4/83KwH/AjMrM+MoJisy4+c3Kyw28AEvJDEq8AEvLDEo6+opNTIwIjcsNy8o6uz+4wIB//I3KwHQzePj4+Pj4+Pj/zcnAf8CMysz4zM1LDE3IjXr5yckNyQe6ik1MjAiNyw3LyjqIOz+AgH/8jcnAdDN4+Pj4+Pj4+P/NysB/wIzKzPjKCYrMuPnNyssNvABLyQxKvABLywxKOvqJyQ3KOrs/uMCAf/yNysB0M3j4+Pj4+Pj4/83JwH/AjMrM+MzNSwxNyI16yckNyjr5zcrLDbwASY4NjcyMC8sJfABKig3FiYrMjIvByQ3KAkyNTAkN+vs7+PnNyssNvABJjg2NzIwLywl8AEnJDcoPDw8PDAwJycXMickNygpMjUwJDfr5yckNyQe6ickNyjqIOzs7P4CAf/yNycB0M3j4+Pj//I3NQHQzf/yNyQlLygB

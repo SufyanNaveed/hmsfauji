@@ -1,22 +1,2 @@
- <?php
-$lang        = $this->setting_model->get();
-$defoult     = $lang[0]['lang_id'];
-$session     = $this->session->userdata('patient');
-$id          = $session['patient_id'];
-$defoultlang = $this->setting_model->get_patientlang($id);
-if (!empty($defoultlang)) {
-    if ($defoultlang['lang_id'] != 0) {
-        $defoult = $defoultlang['lang_id'];
-    } else {
-        $defoult = $lang[0]['lang_id'];
-    }
-}
-$json_languages = json_decode($lang[0]['languages']);
-foreach ($json_languages as $value) {
-    $result = $this->db->select('languages.language,`languages`.`country_code`')->from('languages')->where('id', $value)->get()->row_array();
-    ?>
-                                                    <option data-content='<span class="flag-icon flag-icon-<?php echo $result['country_code']; ?>"></span> <?php echo $result['language']; ?>' value="<?php echo $value; ?>" <?php if ($defoult == $value) {echo "Selected";}?>></option>
-                                                    <?php
-
-}
-?>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj4/8CMysz0M3nLyQxKuPj4+Pj4+PjAOPnNyssNvABNig3NywxKiIwMicoL/ABKig36+z+0M3nJygpMjgvN+Pj4+PjAOPnLyQxKh7zIB7qLyQxKiIsJ+og/tDN5zYoNjYsMjHj4+Pj4wDj5zcrLDbwATYoNjYsMjHwATg2KDUnJDck6+ozJDcsKDE36uz+0M3nLCfj4+Pj4+Pj4+PjAOPnNig2NiwyMR7qMyQ3LCgxNyIsJ+og/tDN5ycoKTI4LzcvJDEq4wDj5zcrLDbwATYoNzcsMSoiMDInKC/wASooNyIzJDcsKDE3LyQxKuvnLCfs/tDNLCnj6+QoMDM3POvnJygpMjgvNy8kMSrs7OM+0M3j4+PjLCnj6+cnKCkyOC83LyQxKh7qLyQxKiIsJ+og4+QA4/Ps4z7QzePj4+Pj4+Pj5ycoKTI4LzfjAOPnJygpMjgvNy8kMSoe6i8kMSoiLCfqIP7QzePj4+NA4ygvNijjPtDN4+Pj4+Pj4+PnJygpMjgvN+MA4+cvJDEqHvMgHuovJDEqIiwn6iD+0M3j4+PjQNDNQNDN5y02MjEiLyQxKjgkKig24wDjLTYyMSInKCYyJyjr5y8kMSoe8yAe6i8kMSo4JCooNuog7P7QzSkyNSgkJivj6+ctNjIxIi8kMSo4JCooNuMkNuPnOSQvOCjs4z7QzePj4+PnNSg2OC834wDj5zcrLDbwAScl8AE2KC8oJjfr6i8kMSo4JCooNvEvJDEqOCQqKO8jLyQxKjgkKig2I/EjJjI4MTc1PCImMicoI+rs8AEpNTIw6+ovJDEqOCQqKDbq7PABOisoNSjr6iwn6u/j5zkkLzgo7PABKig36+zwATUyOiIkNTUkPOvs/tDN4+Pj4wIB0M3j4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj/zIzNywyMeMnJDck8CYyMTcoMTcA6v82MyQx4yYvJDY2AOUpLyQq8CwmMjHjKS8kKvAsJjIx8P8CMysz4ygmKzLj5zUoNjgvNx7qJjI4MTc1PCImMico6iD+4wIB5QH/8jYzJDEB4/8CMysz4ygmKzLj5zUoNjgvNx7qLyQxKjgkKijqIP7jAgHq4zkkLzgoAOX/AjMrM+MoJisy4+c5JC84KP7jAgHl4/8CMysz4ywp4+vnJygpMjgvN+MAAOPnOSQvOCjs4z4oJisy4+UWKC8oJjcoJ+X+QAIBAf/yMjM3LDIxAdDN4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4/8CMysz0M3QzUDQzQIB

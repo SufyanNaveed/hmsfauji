@@ -1,18 +1,2 @@
-<FORM action="https://payments.ipayafrica.com/v3/ke" name="pay_now">
-            <?php  
-                 foreach ($fields as $key => $value) {
-                     
-                     echo ' <input name="'.$key.'" type="hidden" value="'.$value.'"></br>';
-                 }
-                ?>
-
-            
-            <INPUT name="hsh" type="hidden" value="<?php echo $generated_hash ?>">
-            
-            
-         </FORM>
-         <script type="text/javascript">
-         	window.onload = function(){
-  document.forms['pay_now'].submit();
-}
-         </script>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj/wkSFRDjJCY3LDIxAOUrNzczNv3y8jMkPDAoMTc28SwzJDwkKTUsJiTxJjIw8jn28i4o5eMxJDAoAOUzJDwiMTI65QHQzePj4+Pj4+Pj4+Pj4/8CMysz4+PQzePj4+Pj4+Pj4+Pj4+Pj4+PjKTI1KCQmK+Pr5yksKC8nNuMkNuPnLig84wAB4+c5JC84KOzjPtDN4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj0M3j4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+MoJisy4+rj/ywxMzg34zEkMCgA5erx5y4oPPHq5eM3PDMoAOUrLCcnKDHl4zkkLzgoAOXq8ec5JC84KPHq5QH/8iU1Aer+0M3j4+Pj4+Pj4+Pj4+Pj4+Pj40DQzePj4+Pj4+Pj4+Pj4+Pj4+MCAdDN0M3j4+Pj4+Pj4+Pj4+PQzePj4+Pj4+Pj4+Pj4/8MERMYF+MxJDAoAOUrNivl4zc8MygA5SssJycoMeXjOSQvOCgA5f8CMysz4ygmKzLj5yooMSg1JDcoJyIrJDYr4wIB5QHQzePj4+Pj4+Pj4+Pj49DN4+Pj4+Pj4+Pj4+Pj0M3j4+Pj4+Pj4+P/8gkSFRAB0M3j4+Pj4+Pj4+P/NiY1LDM34zc8MygA5TcoOzfyLSQ5JDYmNSwzN+UB0M3j4+Pj4+Pj4+PMOiwxJzI68TIxLzIkJ+MA4yk4MSY3LDIx6+w+0M3j4ycyJjgwKDE38SkyNTA2HuozJDwiMTI66iDxNjglMCw36+z+0M1A0M3j4+Pj4+Pj4+P/8jYmNSwzNwE=

@@ -1,7 +1,2 @@
-Login box in other panel
-Login Details Report
-Leave Request in other panel
-HR Module troughout testing 
-Change Password check in other panel - student and parent can change username
-student counting of active student in dashboard
-dashboard chart view for admin, accountant
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHjDzIqLDHjJTI74ywx4zI3Kyg14zMkMSgv0M0PMiosMeMHKDckLC824xUoMzI1N9DNDygkOSjjFSg0OCg2N+MsMeMyNysoNeMzJDEoL9DNCxXjEDInOC8o4zc1MjgqKzI4N+M3KDY3LDEq49DNBiskMSoo4xMkNjY6MjUn4yYrKCYu4ywx4zI3Kyg14zMkMSgv4/DjNjc4JygxN+MkMSfjMyQ1KDE34yYkMeMmKyQxKijjODYoNTEkMCjQzTY3OCcoMTfjJjI4MTcsMSrjMinjJCY3LDko4zY3OCcoMTfjLDHjJyQ2KyUyJDUn0M0nJDYrJTIkNSfjJiskNTfjOSwoOuMpMjXjJCcwLDHv4yQmJjI4MTckMTc=

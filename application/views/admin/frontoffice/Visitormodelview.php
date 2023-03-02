@@ -1,26 +1,2 @@
-<table class="table table-striped bordergray">
-    <tr>
-        <th><?php echo $this->lang->line('purpose'); ?></th>
-        <td><?php print_r($data['purpose']);?></td>
-        <th><?php echo $this->lang->line('name'); ?></th>
-        <td><?php print_r($data['name']);?></td>
-    </tr>
-    <tr>
-        <th><?php echo $this->lang->line('phone'); ?></th>
-        <td><?php print_r($data['contact']);?></td>
-        <th><?php echo $this->lang->line('number_of_person'); ?></th>
-        <td><?php print_r($data['no_of_pepple']);?></td>
-    </tr>
-    <tr>
-        <th><?php echo $this->lang->line('date'); ?></th>
-        <td><?php print_r(date($this->customlib->getSchoolDateFormat(), $this->customlib->dateyyyymmddTodateformat($data['date'])));?></td>
-        <th><?php echo $this->lang->line('in_time'); ?></th>
-        <td><?php print_r($data['in_time']);?></td>
-    </tr>
-    <tr>
-        <th><?php echo $this->lang->line('out_time'); ?></th>
-        <td><?php print_r($data['out_time']);?></td>
-        <th><?php echo $this->lang->line('note'); ?></th>
-        <td><?php print_r($data['note']);?></td>
-    </tr>
-</table>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj/zckJS8o4yYvJDY2AOU3JCUvKOM3JCUvKPA2NzUsMygn4yUyNScoNSo1JDzlAdDN4+Pj4/83NQHQzePj4+Pj4+Pj/zcrAf8CMysz4ygmKzLj5zcrLDbwAS8kMSrwAS8sMSjr6jM4NTMyNijq7P7jAgH/8jcrAdDN4+Pj4+Pj4+P/NycB/wIzKzPjMzUsMTciNevnJyQ3JB7qMzg1MzI2KOog7P4CAf/yNycB0M3j4+Pj4+Pj4/83KwH/AjMrM+MoJisy4+c3Kyw28AEvJDEq8AEvLDEo6+oxJDAo6uz+4wIB//I3KwHQzePj4+Pj4+Pj/zcnAf8CMysz4zM1LDE3IjXr5yckNyQe6jEkMCjqIOz+AgH/8jcnAdDN4+Pj4//yNzUB0M3j4+Pj/zc1AdDN4+Pj4+Pj4+P/NysB/wIzKzPjKCYrMuPnNyssNvABLyQxKvABLywxKOvqMysyMSjq7P7jAgH/8jcrAdDN4+Pj4+Pj4+P/NycB/wIzKzPjMzUsMTciNevnJyQ3JB7qJjIxNyQmN+og7P4CAf/yNycB0M3j4+Pj4+Pj4/83KwH/AjMrM+MoJisy4+c3Kyw28AEvJDEq8AEvLDEo6+oxODAlKDUiMikiMyg1NjIx6uz+4wIB//I3KwHQzePj4+Pj4+Pj/zcnAf8CMysz4zM1LDE3IjXr5yckNyQe6jEyIjIpIjMoMzMvKOog7P4CAf/yNycB0M3j4+Pj//I3NQHQzePj4+P/NzUB0M3j4+Pj4+Pj4/83KwH/AjMrM+MoJisy4+c3Kyw28AEvJDEq8AEvLDEo6+onJDco6uz+4wIB//I3KwHQzePj4+Pj4+Pj/zcnAf8CMysz4zM1LDE3IjXrJyQ3KOvnNyssNvABJjg2NzIwLywl8AEqKDcWJisyMi8HJDcoCTI1MCQ36+zv4+c3Kyw28AEmODY3MjAvLCXwASckNyg8PDw8MDAnJxcyJyQ3KCkyNTAkN+vnJyQ3JB7qJyQ3KOog7Ozs/gIB//I3JwHQzePj4+Pj4+Pj/zcrAf8CMysz4ygmKzLj5zcrLDbwAS8kMSrwAS8sMSjr6iwxIjcsMCjq7P7jAgH/8jcrAdDN4+Pj4+Pj4+P/NycB/wIzKzPjMzUsMTciNevnJyQ3JB7qLDEiNywwKOog7P4CAf/yNycB0M3j4+Pj//I3NQHQzePj4+P/NzUB0M3j4+Pj4+Pj4/83KwH/AjMrM+MoJisy4+c3Kyw28AEvJDEq8AEvLDEo6+oyODciNywwKOrs/uMCAf/yNysB0M3j4+Pj4+Pj4/83JwH/AjMrM+MzNSwxNyI16+cnJDckHuoyODciNywwKOog7P4CAf/yNycB0M3j4+Pj4+Pj4/83KwH/AjMrM+MoJisy4+c3Kyw28AEvJDEq8AEvLDEo6+oxMjco6uz+4wIB//I3KwHQzePj4+Pj4+Pj/zcnAf8CMysz4zM1LDE3IjXr5yckNyQe6jEyNyjqIOz+AgH/8jcnAdDN4+Pj4//yNzUB0M3/8jckJS8oAQ==

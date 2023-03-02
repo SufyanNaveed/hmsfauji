@@ -24,9 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   | a PHP script and you can easily do that on your own.
   |
  */
-$config['base_url'] = 'http://localhost/hms/';
-$config['base_url'] = 'http://localhost/hms/';
-$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/hms/';
+$config['base_url'] = 'http://localhost/hms_fc/';
+$config['base_url'] = 'http://localhost/hms_fc/';
+$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/hms_fc/';
 
 
 /*
@@ -515,6 +515,6 @@ $config['rewrite_short_tags'] = FALSE;
   | Array:		array('10.0.1.200', '192.168.5.0/24')
  */
 $config['routine_session'] = 16;
-$config['routine_update'] = 1668798000;
+$config['routine_update'] = 1677610800;
 $config['proxy_ips'] = '';
 $config['installed'] = true;

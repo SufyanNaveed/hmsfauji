@@ -1,24 +1,2 @@
-<?php
-$theme = $this->customlib->getCurrentTheme();
-
-if ($theme == "default") {
-    ?>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>backend/dist/themes/default/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>backend/dist/themes/default/ss-main.css">
-    <?php
-} elseif ($theme == "red") {
-    ?>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>backend/dist/themes/red/skins/skin-red.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>backend/dist/themes/red/ss-main-red.css">
-    <?php
-} elseif ($theme == "blue") {
-    ?>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>backend/dist/themes/blue/skins/skin-darkblue.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>backend/dist/themes/blue/ss-main-darkblue.css">
-    <?php
-} elseif ($theme == "gray") {
-    ?>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>backend/dist/themes/gray/skins/skin-light.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>backend/dist/themes/gray/ss-main-light.css">
-    <?php
-}
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj/wIzKzPQzec3KygwKOMA4+c3Kyw28AEmODY3MjAvLCXwASooNwY4NTUoMTcXKygwKOvs/tDN0M0sKePr5zcrKDAo4wAA4+UnKCkkOC835ezjPtDN4+Pj4wIB0M3j4+Pj/y8sMS7jNSgvAOU2NzwvKDYrKCg35eMrNSgpAOX/AjMrM+MoJisy4yUkNigiODUv6+z+4wIBJSQmLigxJ/InLDY38jcrKDAoNvInKCkkOC838jYuLDE28iIkLy/wNi4sMTbxMCwx8SY2NuUB0M3j4+Pj/y8sMS7jNSgvAOU2NzwvKDYrKCg35eMrNSgpAOX/AjMrM+MoJisy4yUkNigiODUv6+z+4wIBJSQmLigxJ/InLDY38jcrKDAoNvInKCkkOC838jY28DAkLDHxJjY25QHQzePj4+P/AjMrM9DNQOMoLzYoLCnj6+c3KygwKOMAAOPlNSgn5ezjPtDN4+Pj4wIB0M3j4+Pj/y8sMS7jNSgvAOU2NzwvKDYrKCg35eMrNSgpAOX/AjMrM+MoJisy4yUkNigiODUv6+z+4wIBJSQmLigxJ/InLDY38jcrKDAoNvI1KCfyNi4sMTbyNi4sMfA1KCfxJjY25QHQzePj4+P/LywxLuM1KC8A5TY3PC8oNisoKDfl4ys1KCkA5f8CMysz4ygmKzLjJSQ2KCI4NS/r7P7jAgElJCYuKDEn8icsNjfyNysoMCg28jUoJ/I2NvAwJCwx8DUoJ/EmNjblAdDN4+Pj4/8CMysz0M1A4ygvNigsKePr5zcrKDAo4wAA4+UlLzgo5ezjPtDN4+Pj4wIB0M3j4+Pj/y8sMS7jNSgvAOU2NzwvKDYrKCg35eMrNSgpAOX/AjMrM+MoJisy4yUkNigiODUv6+z+4wIBJSQmLigxJ/InLDY38jcrKDAoNvIlLzgo8jYuLDE28jYuLDHwJyQ1LiUvOCjxJjY25QHQzePj4+P/LywxLuM1KC8A5TY3PC8oNisoKDfl4ys1KCkA5f8CMysz4ygmKzLjJSQ2KCI4NS/r7P7jAgElJCYuKDEn8icsNjfyNysoMCg28iUvOCjyNjbwMCQsMfAnJDUuJS84KPEmNjblAdDN4+Pj4/8CMysz0M1A4ygvNigsKePr5zcrKDAo4wAA4+UqNSQ85ezjPtDN4+Pj4wIB0M3j4+Pj/y8sMS7jNSgvAOU2NzwvKDYrKCg35eMrNSgpAOX/AjMrM+MoJisy4yUkNigiODUv6+z+4wIBJSQmLigxJ/InLDY38jcrKDAoNvIqNSQ88jYuLDE28jYuLDHwLywqKzfxJjY25QHQzePj4+P/LywxLuM1KC8A5TY3PC8oNisoKDfl4ys1KCkA5f8CMysz4ygmKzLjJSQ2KCI4NS/r7P7jAgElJCYuKDEn8icsNjfyNysoMCg28io1JDzyNjbwMCQsMfAvLCorN/EmNjblAdDN4+Pj4/8CMysz0M1A0M0=

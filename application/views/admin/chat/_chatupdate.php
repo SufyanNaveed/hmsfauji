@@ -1,14 +1,2 @@
-<?php
-if (!empty($updated_chat)) {
-    foreach ($updated_chat as $chat_key => $chat_value) {
-        $chat_type = ($chat_value->chat_user_id == $chat_user_id) ? 'replies' : 'sent';
-        $date_time = ($chat_value->chat_user_id == $chat_user_id) ? 'time_date_send' : 'time_date';
-        ?>
-        <li class="<?php echo $chat_type; ?>">
-            <p><?php echo $chat_value->message; ?></p>
-            <span class="<?php echo $date_time; ?>"> <?php echo date('d M Y, h:i A', strtotime($chat_value->created_at)); ?></span>
-        </li>
-        <?php
-}
-}
-?>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj/wIzKzPQzSwp4+vkKDAzNzzr5zgzJyQ3KCciJiskN+zs4z7QzePj4+MpMjUoJCYr4+vnODMnJDcoJyImKyQ34yQ24+cmKyQ3Ii4oPOMAAePnJiskNyI5JC84KOzjPtDN4+Pj4+Pj4+PnJiskNyI3PDMo4wDj6+cmKyQ3IjkkLzgo8AEmKyQ3Ijg2KDUiLCfjAADj5yYrJDciODYoNSIsJ+zjAuPqNSgzLywoNurj/ePqNigxN+r+0M3j4+Pj4+Pj4+cnJDcoIjcsMCjjAOPr5yYrJDciOSQvOCjwASYrJDciODYoNSIsJ+MAAOPnJiskNyI4Nig1Iiwn7OMC4+o3LDAoIickNygiNigxJ+rj/ePqNywwKCInJDco6v7QzePj4+Pj4+PjAgHQzePj4+Pj4+Pj/y8s4yYvJDY2AOX/AjMrM+MoJisy4+cmKyQ3Ijc8Myj+4wIB5QHQzePj4+Pj4+Pj4+Pj4/8zAf8CMysz4ygmKzLj5yYrJDciOSQvOCjwATAoNjYkKij+4wIB//IzAdDN4+Pj4+Pj4+Pj4+Pj/zYzJDHjJi8kNjYA5f8CMysz4ygmKzLj5yckNygiNywwKP7jAgHlAeP/AjMrM+MoJisy4yckNyjr6ifjEOMc7+Mr/SzjBOrv4zY3NTcyNywwKOvnJiskNyI5JC84KPABJjUoJDcoJyIkN+zs/uMCAf/yNjMkMQHQzePj4+Pj4+Pj//IvLAHQzePj4+Pj4+Pj/wIzKzPQzUDQzUDQzQIB0M0=

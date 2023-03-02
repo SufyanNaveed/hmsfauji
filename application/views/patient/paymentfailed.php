@@ -1,17 +1,2 @@
-<div class="content-wrapper" style="min-height: 1126px;">
-    <section class="content-header">
-        <h1>
-            <?php echo $this->lang->line('payment'); ?>
-        </h1>
-    </section>
-    <!-- Main content -->
-    <section class="invoice">
-        <div class="row">
-            <div class="alert alert-warning alert-dismissible">
-                <h4><i class="icon fa fa-warning"></i><?php echo $this->lang->line('cancelled'); ?></h4>
-                <a style='color: #3c8dbc;  display: inline-table;' href="<?php echo site_url('patient/dashboard/ipdprofile') ?>"><?php echo $this->lang->line('cancelled_message') ?></a>
-            </div>
-        </div>
-    </section>
-    <div class="clearfix"></div>
-</div>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj/ycsOeMmLyQ2NgDlJjIxNygxN/A6NSQzMyg15eM2NzwvKADlMCwx8CsoLCorN/3j9PT1+TM7/uUB0M3j4+Pj/zYoJjcsMjHjJi8kNjYA5SYyMTcoMTfwKygkJyg15QHQzePj4+Pj4+Pj/yv0AdDN4+Pj4+Pj4+Pj4+Pj/wIzKzPjKCYrMuPnNyssNvABLyQxKvABLywxKOvqMyQ8MCgxN+rs/uMCAdDN4+Pj4+Pj4+P/8iv0AdDN4+Pj4//yNigmNywyMQHQzePj4+P/5PDw4xAkLDHjJjIxNygxN+Pw8AHQzePj4+P/NigmNywyMeMmLyQ2NgDlLDE5MiwmKOUB0M3j4+Pj4+Pj4/8nLDnjJi8kNjYA5TUyOuUB0M3j4+Pj4+Pj4+Pj4+P/Jyw54yYvJDY2AOUkLyg1N+MkLyg1N/A6JDUxLDEq4yQvKDU38CcsNjAsNjYsJS8o5QHQzePj4+Pj4+Pj4+Pj4+Pj4+P/K/cB/yzjJi8kNjYA5SwmMjHjKSTjKSTwOiQ1MSwxKuUB//IsAf8CMysz4ygmKzLj5zcrLDbwAS8kMSrwAS8sMSjr6iYkMSYoLy8oJ+rs/uMCAf/yK/cB0M3j4+Pj4+Pj4+Pj4+Pj4+Pj/yTjNjc8LygA6iYyLzI1/ePm9ib7JyUm/uPjJyw2My8kPP3jLDEvLDEo8DckJS8o/urjKzUoKQDl/wIzKzPjKCYrMuM2LDcoIjg1L+vqMyQ3LCgxN/InJDYrJTIkNSfyLDMnMzUyKSwvKOrs4wIB5QH/AjMrM+MoJisy4+c3Kyw28AEvJDEq8AEvLDEo6+omJDEmKC8vKCciMCg2NiQqKOrs4wIB//IkAdDN4+Pj4+Pj4+Pj4+Pj//InLDkB0M3j4+Pj4+Pj4//yJyw5AdDN4+Pj4//yNigmNywyMQHQzePj4+P/Jyw54yYvJDY2AOUmLygkNSksO+UB//InLDkB0M3/8icsOQE=

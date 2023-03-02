@@ -1,6 +1,2 @@
-
-    <div class="modal-dialog">
-        <div class="modal-content">
-        </div>
-    </div>
-</div>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj0M3j4+Pj/ycsOeMmLyQ2NgDlMDInJC/wJywkLzIq5QHQzePj4+Pj4+Pj/ycsOeMmLyQ2NgDlMDInJC/wJjIxNygxN+UB0M3j4+Pj4+Pj4//yJyw5AdDN4+Pj4//yJyw5AdDN//InLDkB

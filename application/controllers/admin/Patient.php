@@ -188,7 +188,7 @@ class patient extends Admin_Controller
 
                         $sender_details = array('patient_id' => $insert_id, 'conference_id' => $conferenceid, 'contact_no' => $mobileno, 'email' => $email);
 
-                        $this->mailsmsconf->mailsms('live_consult', $sender_details);
+                        //$this->mailsmsconf->mailsms('live_consult', $sender_details);
                     }
                 }
             }
@@ -216,7 +216,7 @@ class patient extends Admin_Controller
             }
 
             $sender_details = array('patient_id' => $insert_id, 'patient_name' => $patient_name, 'opd_no' => $opd_no, 'contact_no' => $mobileno, 'email' => $email);
-            $result = $this->mailsmsconf->mailsms('opd_patient_registration', $sender_details);
+            //$result = $this->mailsmsconf->mailsms('opd_patient_registration', $sender_details);
 
         }
         echo json_encode($array);
@@ -370,7 +370,7 @@ class patient extends Admin_Controller
                         $conferenceid   = $this->conference_model->add($insert_array);
                         $sender_details = array('patient_id' => $patient_id, 'conference_id' => $conferenceid, 'contact_no' => $mobileno, 'email' => $email);
 
-                        $this->mailsmsconf->mailsms('live_consult', $sender_details);
+                        //$this->mailsmsconf->mailsms('live_consult', $sender_details);
                     }
                 }
             }
@@ -378,7 +378,7 @@ class patient extends Admin_Controller
             $this->opdNotification($this->input->post("id"), $this->input->post("consultant_doctor"), 'OPDN' . $opdn_id, $url, $date);
 
             $sender_details = array('patient_id' => $patient_id, 'opd_no' => 'OPDN' . $opdn_id, 'contact_no' => $mobileno, 'email' => $email);
-            $this->mailsmsconf->mailsms('opd_patient_revisit', $sender_details);
+            //$this->mailsmsconf->mailsms('opd_patient_revisit', $sender_details);
 
             $array = array('status' => 'success', 'error' => '', 'id' => $opd_id, 'message' => $this->lang->line('success_message'));
         }
@@ -755,7 +755,7 @@ class patient extends Admin_Controller
 
             $sender_details = array('id' => $insert_id, 'credential_for' => 'patient', 'username' => $this->patient_login_prefix . $insert_id, 'password' => $user_password, 'contact_no' => $this->input->post('mobileno'), 'email' => $this->input->post('email'));
 
-            $this->mailsmsconf->mailsms('login_credential', $sender_details);
+            //$this->mailsmsconf->mailsms('login_credential', $sender_details);
 
         }
         echo json_encode($array);
@@ -1433,7 +1433,7 @@ class patient extends Admin_Controller
                         $conferenceid   = $this->conference_model->add($insert_array);
                         $sender_details = array('patient_id' => $patient_id, 'conference_id' => $conferenceid, 'contact_no' => $this->input->post('contact'), 'email' => $this->input->post('email'));
 
-                        $this->mailsmsconf->mailsms('live_consult', $sender_details);
+                        //$this->mailsmsconf->mailsms('live_consult', $sender_details);
                     }
                 }
             }
@@ -2973,7 +2973,7 @@ class patient extends Admin_Controller
                         $conferenceid                    = $this->conference_model->add($insert_array);
                         $sender_details                  = array('patient_id' => $insert_id, 'conference_id' => $conferenceid, 'contact_no' => $mobileno, 'email' => $email);
 
-                        $this->mailsmsconf->mailsms('live_consult', $sender_details);
+                        //$this->mailsmsconf->mailsms('live_consult', $sender_details);
                     }
                 }
             }
@@ -3002,7 +3002,7 @@ class patient extends Admin_Controller
             $this->ipdNotification($insert_id, $this->input->post('consultant_doctor'), $ipdno, $url, $date);
 
             $sender_details = array('patient_id' => $insert_id, 'patient_name' => $patient_name, 'ipd_no' => $ipdno, 'contact_no' => $mobileno, 'email' => $email);
-            $this->mailsmsconf->mailsms('ipd_patient_registration', $sender_details);
+            //$this->mailsmsconf->mailsms('ipd_patient_registration', $sender_details);
         }
 
         echo json_encode($array);
@@ -4040,7 +4040,7 @@ class patient extends Admin_Controller
 
                         $sender_details = array('patient_id' => $insert_id, 'conference_id' => $conferenceid, 'contact_no' => $mobileno, 'email' => $email);
 
-                        $this->mailsmsconf->mailsms('live_consult', $sender_details);
+                        //$this->mailsmsconf->mailsms('live_consult', $sender_details);
                     }
                 }
             }
@@ -4068,7 +4068,7 @@ class patient extends Admin_Controller
             }
 
             $sender_details = array('patient_id' => $insert_id, 'patient_name' => $patient_name, 'opd_no' => $opd_no, 'contact_no' => $mobileno, 'email' => $email);
-            $result = $this->mailsmsconf->mailsms('opd_patient_registration', $sender_details);
+            //$result = $this->mailsmsconf->mailsms('opd_patient_registration', $sender_details);
 
         }
         echo json_encode($array);

@@ -119,15 +119,17 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                         <div class="col-md-9 col-sm-9 col-xs-9">
                                             <!-- <ul class="singlelist"> -->
                                             <ul>
-                                                <li class="singlelist24bold">
+                                                <li class="singlelist24bold sasdasd">
                                                     <span id="listname"></span></li>
                                                 <li>
                                                     <i class="fas fa-user-secret" data-toggle="tooltip" data-placement="top" title="Guardian"></i>
                                                     <span id="guardian"></span>
                                                 </li>
-                                            <!-- </ul>    -->
-                                            <!-- <ul class="multilinelist">    -->
                                                 <li>
+                                                    <i class="fas fa-id-card" data-toggle="tooltip" data-placement="top" title="CNIC"></i>
+                                                    <span id="patient_cnic"></span>
+                                                </li>
+                                               <li>
                                                     <i class="fas fa-venus-mars" data-toggle="tooltip" data-placement="top" title="Gender"></i>
                                                     <span id="genders" ></span>
                                                 </li>
@@ -517,11 +519,12 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                                         <div class="col-lg-12">
                                             <ul class="singlelist">
                                                 <li class="singlelist24bold">
-                                                    <span id="rrlistname"></span></li>
+                                                    <span id="rrlistname"></span>
+                                                </li>
                                                 <li>
                                                     <i class="fas fa-user-secret" data-toggle="tooltip" data-placement="top" title="Guardian"></i>
                                                     <span id="rrguardian"></span>
-                                                </li>
+                                                </li>                                                
                                             </ul>   
                                             <ul class="multilinelist">   
                                                 <li>
@@ -1121,14 +1124,50 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                     $('#password').val(password);
                     $('#revisit_password').val(password);
                     $('#listname').html(res.patient_name);
-                    $('#guardian').html(res.guardian_name);
-                    $('#listnumber').html(res.mobileno);
-                    $('#email').html(res.email);
-                    $('#mobnumber').val(res.mobileno);
-                    $('#pemail').val(res.email);
-                    $('#patientname').val(res.patient_name);
+                    if(res.guardian_name){
+                        $('#guardian').html(res.guardian_name);
+                    }else{
+                        $('#guardian').parent('li').hide();
+                    }
+
+                    if(res.patient_cnic){
+                        $('#patient_cnic').html(res.patient_cnic);
+                    }else{
+                        $('#patient_cnic').parent('li').hide();
+                    }
+
+                    if(res.mobileno){
+                        $('#listnumber').html(res.mobileno);
+                    }else{
+                        $('#listnumber').parent('li').hide();
+                    }
+
+                    if(res.email){
+                        $('#email').html(res.email);
+                    }else{
+                        $('#email').parent('li').hide();
+                    }
+
+                    if(res.mobileno){
+                        $('#mobnumber').html(res.mobileno);
+                    }else{
+                        $('#mobnumber').parent('li').hide();
+                    }
+
+                    if(res.email){
+                        $('#pemail').html(res.email);
+                    }else{
+                        $('#pemail').parent('li').hide();
+                    }
+
+                    if(res.patientname){
+                        $('#patientname').html(res.patientname);
+                    }else{
+                        $('#patientname').parent('li').hide();
+                    }
+
                     if (res.age == "") {
-                        $("#age").html("");
+                        $('#age').parent('li').hide();
                     } else {
                         if (res.age) {
                             var age = res.age + " " + "Years";
@@ -1162,9 +1201,23 @@ $currency_symbol = $this->customlib->getSchoolCurrencyFormat();
                     $("#note").html(res.note);
                     $("#height").html(res.height);
                     $("#weight").html(res.weight);
-                    $("#genders").html(res.gender);
-                    $("#marital_status").html(res.marital_status);
-                    $("#blood_group").html(res.blood_group);
+                    
+                    if(res.genders){
+                        $('#genders').html(res.genders);
+                    }else{
+                        $('#genders').parent('li').hide();
+                    }
+                    if(res.blood_group){
+                        $('#blood_group').html(res.blood_group);
+                    }else{
+                        $('#blood_group').parent('li').hide();
+                    }
+
+                    if(res.marital_status){
+                        $('#marital_status').html(res.marital_status);
+                    }else{
+                        $('#marital_status').parent('li').hide();
+                    }
                     $("#allergies").html(res.known_allergies);
                     //$("#image").attr("src",res.image);
                     $("#image").attr("src", '<?php echo base_url() ?>' + res.image);

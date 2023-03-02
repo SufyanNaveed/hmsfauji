@@ -1,18 +1,2 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<div class="container">
-    <h1>Ajax Pagination in CodeIgniter Framework</h1>
-    <div class="row">
-        <div class="post-list" id="postList">
-            <?php if (!empty($posts)): foreach ($posts as $post): ?>
-                    <div class="list-item"><a href="javascript:void(0);"><h2><?php echo $post['language']; ?></h2></a></div>
-                    <?php
-                endforeach;
-            else:
-                ?>
-                <p>Post(s) not available.</p>
-            <?php endif; ?>
-            <?php echo $this->ajax_pagination->create_links(); ?>
-        </div>
-        <div class="loading" style="display: none;"><div class="content"><img src="<?php echo base_url() . 'assets/images/loading.gif'; ?>"/></div></div>
-    </div>
-</div>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj/zYmNSwzN+M2NSYA5Ss3NzM2/fLyJicxLTbxJi8yOCcpLyQ1KPEmMjDyJC0kO/IvLCU28i00OCg1PPL28fbx9PItNDgoNTzxMCwx8S025QH/8jYmNSwzNwHQzf8nLDnjJi8kNjYA5SYyMTckLDEoNeUB0M3j4+Pj/yv0AQQtJDvjEyQqLDEkNywyMeMsMeMGMicoDCoxLDcoNeMJNSQwKDoyNS7/8iv0AdDN4+Pj4/8nLDnjJi8kNjYA5TUyOuUB0M3j4+Pj4+Pj4/8nLDnjJi8kNjYA5TMyNjfwLyw2N+XjLCcA5TMyNjcPLDY35QHQzePj4+Pj4+Pj4+Pj4/8CMysz4ywp4+vkKDAzNzzr5zMyNjc27Oz94ykyNSgkJivj6+czMjY3NuMkNuPnMzI2N+z94wIB0M3j4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4/8nLDnjJi8kNjYA5S8sNjfwLDcoMOUB/yTjKzUoKQDlLSQ5JDYmNSwzN/05Miwn6/Ps/uUB/yv1Af8CMysz4ygmKzLj5zMyNjce6i8kMSo4JCoo6iD+4wIB//Ir9QH/8iQB//InLDkB0M3j4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4/8CMysz0M3j4+Pj4+Pj4+Pj4+Pj4+PjKDEnKTI1KCQmK/7QzePj4+Pj4+Pj4+Pj4ygvNij90M3j4+Pj4+Pj4+Pj4+Pj4+PjAgHQzePj4+Pj4+Pj4+Pj4+Pj4+P/MwETMjY36zbs4zEyN+MkOSQsLyQlLyjx//IzAdDN4+Pj4+Pj4+Pj4+Pj/wIzKzPjKDEnLCn+4wIB0M3j4+Pj4+Pj4+Pj4+P/AjMrM+MoJisy4+c3Kyw28AEkLSQ7IjMkKiwxJDcsMjHwASY1KCQ3KCIvLDEuNuvs/uMCAdDN4+Pj4+Pj4+P/8icsOQHQzePj4+Pj4+Pj/ycsOeMmLyQ2NgDlLzIkJywxKuXjNjc8LygA5ScsNjMvJDz94zEyMSj+5QH/Jyw54yYvJDY2AOUmMjE3KDE35QH/LDAq4zY1JgDl/wIzKzPjKCYrMuMlJDYoIjg1L+vs4/Hj6iQ2Nig3NvIsMCQqKDbyLzIkJywxKvEqLCnq/uMCAeXyAf/yJyw5Af/yJyw5AdDN4+Pj4//yJyw5AdDN//InLDkB

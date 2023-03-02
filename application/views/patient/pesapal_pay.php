@@ -1,1 +1,2 @@
-<iframe src="<?php echo $iframe_src;?>" width="100%" height="720px" scrolling="auto" frameBorder="0"> <p>Unable to load the payment page</p> </iframe>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj/ywpNSQwKOM2NSYA5f8CMysz4ygmKzLj5ywpNSQwKCI2NSb+AgHl4zosJzcrAOX08/Po5eMrKCwqKzcA5fr18zM75eM2JjUyLy8sMSoA5SQ4NzLl4yk1JDAoBTI1Jyg1AOXz5QHj/zMBGDEkJS8o4zcy4y8yJCfjNyso4zMkPDAoMTfjMyQqKP/yMwHj//IsKTUkMCgB

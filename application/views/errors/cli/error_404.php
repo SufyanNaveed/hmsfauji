@@ -1,9 +1,2 @@
-<?php
-
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-echo "\nERROR: ",
- $heading,
- "\n\n",
- $message,
- "\n\n";
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj/wIzKzPQzdDNJygpLDEoJ+vqBQQWCBMEFwvq7OMSFeMoOyw36+oRMuMnLDUoJjfjNiY1LDM34yQmJig2NuMkLy8yOign6uz+0M3QzSgmKzLj5R8xCBUVEhX94+Xv0M3j5ysoJCcsMSrv0M3j5R8xHzHl79DN4+cwKDY2JCoo79DN4+UfMR8x5f7QzQ==

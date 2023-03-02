@@ -1,23 +1,2 @@
-
-<div class="content-wrapper" style="min-height: 946px;">  
-    <section class="content-header">
-        <h1>
-            <i class="fa fa-warning"></i> <?php echo $this->lang->line('access_denied'); ?></h1>
-    </section>
-    <section class="content">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- general form elements -->
-                <div class="box box-primary">
-
-                    <div class="box-body">
-                        <div class="alert alert-warning"><?php echo $this->lang->line('not_authoried'); ?></div>
-
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-                <!-- /.box -->
-            </div>
-        </div>
-    </section>
-</div>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj0M3/Jyw54yYvJDY2AOUmMjE3KDE38Do1JDMzKDXl4zY3PC8oAOUwLDHwKygsKis3/eP89/kzO/7lAePj0M3j4+Pj/zYoJjcsMjHjJi8kNjYA5SYyMTcoMTfwKygkJyg15QHQzePj4+Pj4+Pj/yv0AdDN4+Pj4+Pj4+Pj4+Pj/yzjJi8kNjYA5Skk4ykk8DokNTEsMSrlAf/yLAHj/wIzKzPjKCYrMuPnNyssNvABLyQxKvABLywxKOvqJCYmKDY2IicoMSwoJ+rs/uMCAf/yK/QB0M3j4+Pj//I2KCY3LDIxAdDN4+Pj4/82KCY3LDIx4yYvJDY2AOUmMjE3KDE35QHQzePj4+Pj4+Pj/ycsOeMmLyQ2NgDlNTI65QHQzePj4+Pj4+Pj4+Pj4/8nLDnjJi8kNjYA5SYyL/AwJ/D09eUB0M3j4+Pj4+Pj4+Pj4+Pj4+Pj/+Tw8OMqKDEoNSQv4ykyNTDjKC8oMCgxNzbj8PAB0M3j4+Pj4+Pj4+Pj4+Pj4+Pj/ycsOeMmLyQ2NgDlJTI74yUyO/AzNSwwJDU85QHQzdDN4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+P/Jyw54yYvJDY2AOUlMjvwJTInPOUB0M3j4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+P/Jyw54yYvJDY2AOUkLyg1N+MkLyg1N/A6JDUxLDEq5QH/AjMrM+MoJisy4+c3Kyw28AEvJDEq8AEvLDEo6+oxMjciJDg3KzI1LCgn6uz+4wIB//InLDkB0M3QzePj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj//InLDkB0M3j4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4//k8PDj8vElMjvwJTInPOPw8AHQzePj4+Pj4+Pj4+Pj4+Pj4+P/8icsOQHQzePj4+Pj4+Pj4+Pj4+Pj4+P/5PDw4/LxJTI74/DwAdDN4+Pj4+Pj4+Pj4+Pj//InLDkB0M3j4+Pj4+Pj4//yJyw5AdDN4+Pj4//yNigmNywyMQHQzf/yJyw5AQ==

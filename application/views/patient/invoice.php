@@ -1,21 +1,2 @@
-<?php
-$currency_symbol = $this->customlib->getSchoolCurrencyFormat();
-?>
-<div class="content-wrapper" style="min-height: 1126px;">
-    <section class="content-header">
-        <h1>
-            <i class="fa fa-money"></i> Payment
-        </h1>
-    </section>
-    <!-- Main content -->
-    <section class="invoice">
-        <div class="row">
-            <div class="alert alert-success alert-dismissible">
-
-                <h4><i class="fa fa-check"></i> Success</h4>
-                Thank you for your payment.
-            </div>
-        </div>
-    </section>
-    <div class="clearfix"></div>
-</div>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##AgHj/wIzKzPQzecmODU1KDEmPCI2PDAlMi/jAOPnNyssNvABJjg2NzIwLywl8AEqKDcWJisyMi8GODU1KDEmPAkyNTAkN+vs/tDNAgHQzf8nLDnjJi8kNjYA5SYyMTcoMTfwOjUkMzMoNeXjNjc8LygA5TAsMfArKCwqKzf94/T09fkzO/7lAdDN4+Pj4/82KCY3LDIx4yYvJDY2AOUmMjE3KDE38CsoJCcoNeUB0M3j4+Pj4+Pj4/8r9AHQzePj4+Pj4+Pj4+Pj4/8s4yYvJDY2AOUpJOMpJPAwMjEoPOUB//IsAeMTJDwwKDE30M3j4+Pj4+Pj4//yK/QB0M3j4+Pj//I2KCY3LDIxAdDN4+Pj4//k8PDjECQsMeMmMjE3KDE34/DwAdDN4+Pj4/82KCY3LDIx4yYvJDY2AOUsMTkyLCYo5QHQzePj4+Pj4+Pj/ycsOeMmLyQ2NgDlNTI65QHQzePj4+Pj4+Pj4+Pj4/8nLDnjJi8kNjYA5SQvKDU34yQvKDU38DY4JiYoNjbjJC8oNTfwJyw2MCw2NiwlLyjlAdDN0M3j4+Pj4+Pj4+Pj4+Pj4+Pj/yv3Af8s4yYvJDY2AOUpJOMpJPAmKygmLuUB//IsAeMWOCYmKDY2//Ir9wHQzePj4+Pj4+Pj4+Pj4+Pj4+MXKyQxLuM8MjjjKTI14zwyODXjMyQ8MCgxN/HQzePj4+Pj4+Pj4+Pj4//yJyw5AdDN4+Pj4+Pj4+P/8icsOQHQzePj4+P/8jYoJjcsMjEB0M3j4+Pj/ycsOeMmLyQ2NgDlJi8oJDUpLDvlAf/yJyw5AdDN//InLDkB0M0=

@@ -1,26 +1,2 @@
- <?php 
-                                          $lang=$this->setting_model->get();
-                                            $defoult=$lang[0]['lang_id'];
-                                            $session=$this->session->userdata('hospitaladmin');
-                                        
-                                            $id=$session['id'];
-                                           $defoultlang=$this->setting_model->get_stafflang($id);
-                                          
-                                           if(!empty($defoultlang) ){
-                                            if($defoultlang['lang_id']!=0){
-                                                $defoult=$defoultlang['lang_id'];
-                                            }else{
-                                            $defoult=$lang[0]['lang_id'];   
-                                            }
-                                             
-                                            }
-                                          $json_languages=json_decode($lang[0]['languages']);
-
-                                                foreach($json_languages as $value){
-                                                    $result=$this->db->select('languages.language,`languages`.`country_code`')->from('languages')->where('id',$value)->get()->row_array();
-                                                    ?>
-                                                    <option data-content='<span class="flag-icon flag-icon-<?php echo $result['country_code'];?>"></span> <?php echo $result['language'];?>' value="<?php echo $value;?>" <?php if($defoult==$value){ echo "Selected";} ?>></option>
-                                                    <?php
-
-                                                }
-                                            ?>
+<?php bolt_decrypt( __FILE__ , BOLT_KEY); return 0;
+    ##!!!##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
